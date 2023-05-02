@@ -6,3 +6,4 @@ document.getElementById('demo').innerHTML = "Addition is"+c;
 var ch="hello";
 var ch="hi";
 var d=20;
+document.write(ch+d);
