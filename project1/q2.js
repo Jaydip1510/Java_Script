@@ -3,8 +3,8 @@ let b = 7;
 
 document.write("Before swapping a:-"+a);
 document.write("Before swapping b:-"+b);
-let temp = a;
+let c = a;
 a = b;
-b = temp;
+b = c;
 document.write("After swapping a:- "+a); 
 document.write("After swapping b:- "+b); 
