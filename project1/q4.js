@@ -4,10 +4,10 @@ let da = 0.05;
 let ta = 0.08; 
 
 
-let totalAllowances = (hra + da + ta) * baseSalary;
+let total = (hra + da + ta) * baseSalary;
 
 
-let grossSalary = baseSalary + totalAllowances;
+let grossSalary = baseSalary + total;
 
 
 document.write("The gross salary is :-"+grossSalary);
