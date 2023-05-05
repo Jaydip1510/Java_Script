@@ -4,7 +4,7 @@ document.write("2.Subtraction<br>");
 document.write("3.multiplication<br>");
 document.write("4.division<br>");
 document.write("Enter your choice:-<br>");
-document.write("\nEnter a & b:-<br>");
+let userInput = prompt("Enter A & b:"+a,b);
 switch (ch)
 {
 case 1: c=a+b;
