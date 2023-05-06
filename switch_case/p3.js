@@ -1,4 +1,4 @@
-let userInput = prompt("Enter a letter for a day of the week: ");
+let userInput = prompt("Enter the week:- ");
 
 switch (userInput) {
   case 'm':
