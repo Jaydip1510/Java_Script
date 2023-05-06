@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <div id="circle"></div>
+    <button type="button" onclick="addVal()">Click</button>
+    <button type="button" onclick="add(15,20)">Add value</button>
+     <script>
+
+        //takenothing return nothing
+         function addVal(){
+             alert("hi how are you");
+         }
+
+        //takesomething return nothing
+        function add(a,b){
+            document.write("Value of a is:-"+a+"<br>");
+            document.write("Value of b is:-"+b+"<br>");
+        }
+
+        //takenothing return something
+        // let c;
+        // function disp(){
+        //     let a = prompt("Enter Value of A:-");
+        //     let b = prompt("Enter Value of B:-");
+        //     c = parseInt(a)+parseInt(b);
+        //     return c;
+        // } 
+        // document.getElementById('demo').innerHTML = "Addition is:-"+disp();
+
+        //takesomething return something
+        let r;
+        function circle(){
+            const  pi= 3.14;
+            return pi*r*r;
+        }
+        r = prompt("Enter Radiaous:-");
+        document.getElementById('circle').innerHTML = "Area of Circle is:-"+circle();
+
+
+     </script>
+</body>
+</html>
