@@ -1,5 +1,5 @@
-let a = 5;
-let b = 7;
+let a = prompt("Enter value of A:-");
+let b = prompt("Enter value of B:-");
 
 document.write("Before swapping a:-"+a+"<br>");
 document.write("Before swapping b:-"+b+"<br>");
