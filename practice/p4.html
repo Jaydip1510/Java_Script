@@ -11,38 +11,39 @@
     <div id="circle"></div>
     <button type="button" onclick="disp()">Click</button>
     <button type="button" onclick="add(15,20)">Add value</button>
-     <script>
-
+     <script>     
         //takenothing return nothing
-         function disp(){
-             alert("hi how are you");
-         }
-
-        //takesomething return nothing
-        function add(a,b){
-            document.write("Value of a is:-"+a+"<br>");
-            document.write("Value of b is:-"+b+"<br>");
+        
+        function disp(){
+               alert("hello how are you:-");
         }
 
-        //takenothing return something
-        // let c;
-        // function disp(){
-        //     let a = prompt("Enter Value of A:-");
-        //     let b = prompt("Enter Value of B:-");
-        //     c = parseInt(a)+parseInt(b);
-        //     return c;
-        // } 
-        // document.getElementById('demo').innerHTML = "Addition is:-"+disp();
+        //takesomething return nothing
+
+        function add(a,b){
+               document.write("Value of A is:-"+a+"<br>");
+               document.write("Value of B is:-"+b+"<br");
+        }
+        
+        // takenothing return something
+
+        let c;
+        function addVal(){
+            let a = prompt("Enter Value of A:-");
+            let b = prompt("Enter value of B:-");
+            c = parseInt(a)+parseInt(b);
+            return c;
+        }
+        document.getElementById('demo').innerHTML = "Addition is:-"+addVal();
 
         //takesomething return something
         let r;
         function circle(){
-            const  pi= 3.14;
+            const pi=3.14;
             return pi*r*r;
         }
-        r = prompt("Enter Radiaous:-");
-        document.getElementById('circle').innerHTML = "Area of Circle is:-"+circle();
-
+        r = prompt("Enter Radious:-");
+        document.getElementById('circle').innerHTML = "Area of circle is:-"+circle();
 
      </script>
 </body>
