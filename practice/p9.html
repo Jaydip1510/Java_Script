@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ternary_operator</title>
+</head>
+<body>
+      <div id="vote"></div>
+      <div id="oddeven"></div>
+    <script>
+      let age = prompt("Enter age:-");
+      document.getElementById('vote').innerHTML = (age>18)?"you are eligible for vote":"you are not Eligible for vote";
+      let no = prompt("Enter Any Number:-");
+      let ans = no%2;
+      document.getElementById('oddeven').innerHTML=(ans == 0)?"Number is Even":"Number is Odd";
+    
+    </script>
+</body>
+</html>
