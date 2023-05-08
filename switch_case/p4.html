@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case</title>
+</head>
+<body>
+    <p id="ans"></p>
+    <script>
+           let a = prompt("Enter Value of A:-");
+           let b = prompt("Eenter Value of B:-");
+           let ch = prompt("Enter The Any Choice:-");
+           let c;
+        switch(ch){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':document.getElementById('ans').innerHTML = "it is vowels";
+                    break;
+
+            case '+': c=parseInt(a)+parseInt(b);
+                    document.getElementById('ans').innerHTML = "Addition is "+c;
+                    break;
+            case '-':c=parseInt(a)-parseInt(b);
+                    document.getElementById('ans').innerHTML = "Minus is "+c;
+                    break;
+
+            case '*':c=parseInt(a)*parseInt(b);
+                    document.getElementById('ans').innerHTML = "Multiplication is "+c;
+                    break;
+
+            case '/':c=parseInt(a)/parseInt(b);
+                    document.getElementById('ans').innerHTML = "division is "+c;
+                    break;
+
+            default:document.getElementById('ans').innerHTML = "Consonant";
+                    break;
+        }
+
+    </script>
+</body>
+</html>
