@@ -8,6 +8,7 @@
  document.write("Total is:-"+total+"<br>")
 
  let per = total/5;
+ document.write("Percantage is:-"+per+"<br>");
   if(per>=90)
            document.write("Grade A+");
      else if(per>=80 && per<90)
