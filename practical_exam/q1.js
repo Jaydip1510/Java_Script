@@ -1,4 +1,4 @@
-let units = 700; 
+let units = prompt("Enter units:-"); 
 
 let price;
 
