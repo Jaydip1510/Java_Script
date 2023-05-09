@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+    <p id="Player_A">Player A</p>
+    <p id="Player_B">Player B</p>
+    <p id="msg"></p>
+    <p id="win_msg"></p>
+    <div id="O_X_Game"></div>
+
+    <script>
+        $(document).ready(function () {
+            let PlayerA = prompt("Choose [O,X]");
+            let PlayerB;
+            let turnOf;
+            if (PlayerA != 'O' && PlayerA != 'X') {
+                PlayerA = 'O';
+            }
+            if (PlayerA == 'O') {
+                PlayerB = 'X';
+            } else {
+                PlayerB = 'O';
+            }
+            turnOf = 'A';
+            $("#msg").html("Player A's Turn");
+            $("#Player_A").html("Player A => " + PlayerA);
+            $("#Player_B").html("Player B => " + PlayerB);
+            drawTable(3, 3, "O_X_Game");
+            function drawTable(row, col, domId) {
+                let tblHtml = "";
+                tblHtml = "<table border='1'>";
+                for (let i = 0; i < row; i++) {
+                    tblHtml = tblHtml + "<tr>";
+                    for (let j = 0; j < col; j++) {
+                        tblHtml = tblHtml + `<td><button class="btn" jaydip="-" id="${i}_${j}" setBtnOff="0">&nbsp;</button></td>`;
+                    }
+                    tblHtml = tblHtml + "</tr>";
+                }
+                tblHtml = tblHtml + "</table>";
+                $("#" + domId).html(tblHtml);
+            }
+
+            function chkWinner() {
+                let tmparray = [
+                    ["-", "-", "-"],
+                    ["-", "-", "-"],
+                    ["-", "-", "-"]
+                ];
+                let is_win = false,
+                    is_game_over = true,
+                    is_continue = false;
+                $('.btn').each(function () {
+                    let id = $(this).attr("id");
+                    var test = id.split("_");
+
+                    tmparray[test[0]][test[1]] = $(this).attr("jaydip");
+                    //console.log(`Each ${test[0]}_${test[1]}`+$(this).attr("jaydip"));
+                });
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (tmparray[i][j] == '-') {
+                            is_game_over = false;
+                            is_continue = true;
+                            break;
+                        }
+                        if(is_continue)
+                        {
+                            break;
+                        }
+                    }
+                }
+                if (PlayerA == 'X' && PlayerB == 'O') {
+                    if (tmparray[0][0] == PlayerA && tmparray[0][1] == PlayerA && tmparray[0][2] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    } else if (tmparray[1][0] == PlayerA && tmparray[1][1] == PlayerA && tmparray[1][2] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    } else if (tmparray[2][0] == PlayerA && tmparray[2][1] == PlayerA && tmparray[2][2] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][0] == PlayerA && tmparray[1][0] == PlayerA && tmparray[2][0] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][1] == PlayerA && tmparray[1][1] == PlayerA && tmparray[2][1] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][2] == PlayerA && tmparray[1][2] == PlayerA && tmparray[2][2] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][0] == PlayerA && tmparray[1][1] == PlayerA && tmparray[2][2] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][2] == PlayerA && tmparray[1][1] == PlayerA && tmparray[2][0] == PlayerA) {
+                        console.log("Player A Win");
+                        is_win = true;
+                    }
+
+                    if (is_win == true) {
+                        $("#win_msg").html("Player A Win");
+                    }
+                } else if (PlayerB == 'X' && PlayerA == 'O') {
+                    if (tmparray[0][0] == PlayerB && tmparray[0][1] == PlayerB && tmparray[0][2] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    } else if (tmparray[1][0] == PlayerB && tmparray[1][1] == PlayerB && tmparray[1][2] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    } else if (tmparray[2][0] == PlayerB && tmparray[2][1] == PlayerB && tmparray[2][2] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][0] == PlayerB && tmparray[1][0] == PlayerB && tmparray[2][0] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][1] == PlayerB && tmparray[1][1] == PlayerB && tmparray[2][1] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][2] == PlayerB && tmparray[1][2] == PlayerB && tmparray[2][2] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][0] == PlayerB && tmparray[1][1] == PlayerB && tmparray[2][2] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+                    else if (tmparray[0][2] == PlayerB && tmparray[1][1] == PlayerB && tmparray[2][0] == PlayerB) {
+                        console.log("Player B Win");
+                        is_win = true;
+                    }
+
+                    if (is_win == true) {
+                        $("#win_msg").html("Player B Win");
+                    }
+                }
+                if (is_win == false && is_game_over == true) {
+                    $("#win_msg").html("Match is draw");
+                }else if(is_win == true)
+                {
+                    $('.btn').each(function () {
+                        $(this).attr("disabled", "disabled");
+                    });
+                }
+
+            }
+            $('.btn').on('click', function () {
+                let val, val_setBtnOff;
+                val = $(this).attr("jaydip");
+                val_setBtnOff = $(this).attr("setBtnOff");
+                if (val_setBtnOff == "0") {
+                    if (turnOf == 'A') {
+                        $(this).html(PlayerA);
+                        $(this).attr("jaydip", PlayerA);
+                        turnOf = 'B';
+                        $("#msg").html("Player B's Turn");
+                    } else {
+                        turnOf = 'A';
+                        $(this).html(PlayerB);
+                        $(this).attr("jaydip", PlayerB);
+                        $("#msg").html("Player A's Turn");
+                    }
+                    $(this).attr("setBtnOff", "1");
+                }
+                chkWinner();
+                //setTimeout(chkWinner(),5000);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
