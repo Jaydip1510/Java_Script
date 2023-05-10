@@ -10,5 +10,4 @@ switch(ch){
       default:
            document.write(ch+"&nbspis Consonant");
            break;  
-
 }
