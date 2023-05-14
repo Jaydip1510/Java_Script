@@ -21,10 +21,15 @@ document.write("sub string function is :-"+ch1+"<br>");
 abc = str.substr(-20);
 document.write("sub string is:-"+abc+"<br>");
 
+let txt = "my self jay jaydip";
+let txt1 = txt.replace("jay","Makwana");
+document.write("Replace String is&nbsp"+txt1+"<br>");
+
  text1 = "jaydip";
  text2 = "makwana";
- text3 = text1.concat("@",text2);
+ text3 = text1.concat("1510@",text2);
  document.write("Concat is:-"+text3+"<br>");
+
 
  
 
