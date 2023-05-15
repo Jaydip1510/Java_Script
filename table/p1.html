@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <button type="button" id="btn" value="add">Submit</button>
+         <script>   
+            $('#btn').on('click',function(){
+              drawTable(3, 3,"tbl");
+              function drawTable(row, col,domId) {
+                let tblHtml = "";
+                tblHtml = "<table border='1'>";
+                for (let i = 0; i < row; i++) {
+                    tblHtml = tblHtml + "<tr>";
+                    for (let j = 0; j < col; j++) {
+                        tblHtml = tblHtml + `<td><button class="btn" jaydip="-" id="${i}_${j}" setBtnOff="0">&nbsp;</button></td>`;
+ 
+                    }
+                    tblHtml = tblHtml + "</tr>";
+                }
+                tblHtml = tblHtml + "</table>";
+                $("#" + domId).html(tblHtml);
+            }
+                 
+            })
+
+         </script>
+<div id="tbl"></div>
+</body>
+
+</html>
