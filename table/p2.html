@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="txt"/>
+    <button type="button" id="btn">Push</button>
+    <button type="button" id="pop">Pop</button>
+    <script>
+          let arr = [];
+
+          $('#btn').on('click',function(){
+            let txtVal = $("#txt").val();
+             arr.push(txtVal);
+             displayArray();
+             $("#txt").val("");
+          });
+          $('#pop').on('click',function(){
+            arr.pop();
+            displayArray();
+          });
+          function displayArray()
+          {
+            let html_code = '';
+            for(let i = 0;i<arr.length;i++)
+            {
+                html_code = html_code+`Index[${i}] = ` + arr[i]+"<br>";
+            }
+            $("#arrVal").html(html_code);
+          }
+    </script>
+<div id="arrVal"></div>
+</body>
+
+</html>
