@@ -8,11 +8,17 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 <body>
+    <input type="text" id="txtValue" />
     <button type="button" id="btn" value="add">Submit</button>
          <script>   
             $('#btn').on('click',function(){
-              drawTable(3, 3,"tbl");
-              function drawTable(row, col,domId) {
+                if($("#txtValue").val() !== '')
+                {
+                    addTrToTable("myTbl",$("#txtValue").val(),1);
+                    $("#txtValue").val("");
+                }
+            });
+            function drawTable(row, col,domId) {
                 let tblHtml = "";
                 tblHtml = "<table border='1'>";
                 for (let i = 0; i < row; i++) {
@@ -26,11 +32,25 @@
                 tblHtml = tblHtml + "</table>";
                 $("#" + domId).html(tblHtml);
             }
-                 
-            })
-
+            function addTrToTable(TblId,value, noOfTr) {
+                let tblHtml = "";
+                if(noOfTr == 0)
+                {
+                    noOfTr = 1;
+                }
+                for (let i = 0; i < noOfTr; i++) {
+                    tblHtml = tblHtml + "<tr>";
+                        tblHtml = tblHtml + `<td>${value}</td>`;
+                    tblHtml = tblHtml + `<td><button class="btn" id="${i}">&nbsp;</button></td>`;
+                    tblHtml = tblHtml + "</tr>";
+                }
+                $("#" + TblId).append(tblHtml);
+            }
          </script>
 <div id="tbl"></div>
+<table border='1' id="myTbl">
+
+</table>
 </body>
 
 </html>
