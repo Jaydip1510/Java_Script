@@ -1,9 +1,11 @@
-let ch = prompt("Enter Any Character");
-upr="A","E","I","O","U";
-lwr="a","e","i","o","u";
+const character = prompt("Enter a character:");
 
-if(upr = lwr){
-    document.write("character is Vowel");
-}else{
-    document.write("Invalid Input");
+if (character.match(/[a-z]/)) {
+  if (['a', 'e', 'i', 'o', 'u'].includes(character)) {
+    document.write("The character is a vowel.");
+  } else {
+    document.write("The character is a consonant.");
+  }
+} else {
+  document.write("Invalid character.");
 }
