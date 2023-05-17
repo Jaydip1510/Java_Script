@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>height</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+  <p class="str">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum neque nulla dolorem laborum at
+    dolorum delectus nam nesciunt consequuntur, minima maiores libero. Explicabo ad reprehenderit minima eius fuga.
+    Aspernatur.</p>
+
+  <input type="text" name="text" id="txt">
+  <button type="button" id="btn">Find</button>
+  <script>
+    $("#btn").on("click", function () {
+      let i;
+      let count = 0;
+      let str, search;
+      str = $(".str").html();
+      search = $("#txt").val();
+      if (search.length != 0) {
+        for (i = 0; i < str.length; i++) {
+          if (str[i] === search) {
+            count++;
+            
+          }
+        }
+        alert("Count "+search+" is:-" + count);
+        
+      }
+    })
+
+  </script>
+</body>
+
+</html>
