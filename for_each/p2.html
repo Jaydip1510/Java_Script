@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evenodd</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <input type="text" name="text" id="txt">
+    <button type="button" name="btn" id="btn">Submit</button>
+    <div style="display:flex">
+    <div id="d1" style="height: 500px; width: 800px;  border: 3px solid chartreuse;overflow-y:scroll;"></div>
+    <div id="d2" style="height: 500px; width: 800px; border: 3px solid  blue;overflow-y:scroll;"></div>
+    <div id="d3" style="height: 500px; width: 800px; border: 3px solid  darkmagenta; overflow-y:scroll;"></div>
+    <!-- <input type="text" name="txt2" id="txt2"> -->
+
+
+    <script>
+          $('#btn').on('click',function(){
+          let ch,i;
+          ch = $('#txt').val();
+          if(ch%2==0){
+            $('#d1').append(ch+"<br>");
+          }else{
+            $('#d2').append(ch+"<br>");
+          }
+           $('#d3').append(ch+"<br>");
+          // ch1 = $('#txt2').val();
+
+
+
+          // add = parseInt(ch)+parseInt(ch1);
+          // alert("Addition is:-"+add);
+          
+                 
+          });
+    </script>
+</body>
+</html>
