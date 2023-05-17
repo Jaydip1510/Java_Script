@@ -34,9 +34,15 @@ for(i=0;i<c.length;i++){
 }
 
 document.write("-----------After Sorting------------"+"<br>");
-let arr_new = [40,35,100,250,67,4,5];
-document.write(arr_new.sort(function(a,b){ return b-a}));
-d = arr_new.reverse();
-for(i=0;i<d.length;i++){
-    document.write(d[i]+"<br>");
+// let arr_new = [40,35,100,250,67,4,5];
+// document.write(arr_new.sort(function(a,b){ return a-b}));
+// d = arr_new.reverse();
+// for(i=0;i<d.length;i++){
+//     document.write(d[i]+"<br>");
+// }
+
+let arr_new = ["xyz","abc","pqr","def"];
+arr_new.sort();
+for(i=0;i<arr_new.length;i++){
+    document.write(arr_new[i]+"<br>");
 }
