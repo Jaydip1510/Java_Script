@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          var listBox1 = document.createElement("select");
+var listBox2 = document.createElement("select");
+
+// Add some sample options to listBox1
+listBox1.innerHTML = "<option>Option 1</option><option>Option 2</option><option>Option 3</option>";
+
+// Create a button
+var transferButton = document.createElement("button");
+transferButton.textContent = "Transfer";
+
+// Add click event listener to the button
+transferButton.addEventListener("click", function() {
+  // Move selected options from listBox1 to listBox2
+  var selectedOptions = Array.from(listBox1.selectedOptions);
+  selectedOptions.forEach(function(option) {
+    listBox2.appendChild(option);
+  });
+});
+
+// Append listboxes and button to the document body
+document.body.appendChild(listBox1);
+document.body.appendChild(listBox2);
+document.body.appendChild(transferButton);
+    </script>
+</body>
+</html>

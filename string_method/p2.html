@@ -20,19 +20,18 @@
     $("#btn").on("click", function () {
       let i;
       let count = 0;
-      let str, search;
+      let str, search,abc;
       str = $(".str").html();
       search = $("#txt").val();
       if (search.length != 0) {
         for (i = 0; i < str.length; i++) {
           if (str[i] === search) {
             count++;
-            
           }
         }
         alert("Count "+search+" is:-" + count);
-        
       }
+      
     })
 
   </script>
