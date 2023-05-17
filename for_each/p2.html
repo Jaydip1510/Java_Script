@@ -18,15 +18,34 @@
 
 
     <script>
+          let arr = [];
           $('#btn').on('click',function(){
           let ch,i;
           ch = $('#txt').val();
+          arr.push(ch);
+
+          for(i=0;i<arr.length;i++){
+              console.log(arr[i]+"<br>");  
+              
+          if(arr[i]%2==0){
+            $('#d1').append(arr[i]+"<br>");   
+          }else{
+            $('#d2').append(arr[i]+"<br>");
+          }
+            $('#d3').append(arr[i]+"<br>");
+         
+        }
+          
+  /*
           if(ch%2==0){
             $('#d1').append(ch+"<br>");
           }else{
             $('#d2').append(ch+"<br>");
           }
            $('#d3').append(ch+"<br>");
+          
+*/
+          console.log(arr);
           // ch1 = $('#txt2').val();
 
 
