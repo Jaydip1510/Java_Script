@@ -10,35 +10,38 @@
 </head>
 
 <body>
-  <p class="str">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum neque nulla dolorem laborum at
+  <p class="str" style="font-size: large;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum neque nulla dolorem laborum at
     dolorum delectus nam nesciunt consequuntur, minima maiores libero. Explicabo ad reprehenderit minima eius fuga.
     Aspernatur.</p>
 
   <input type="text" name="text" id="txt">
   <button type="button" id="btn">Find</button>
+  <div id="info"></div>
   <script>
+    let org_str;
+    org_str = $(".str").html();
     $("#btn").on("click", function () {
       let i;
       let count = 0;
       let str,final_html, search,abc;
       final_html = '';
-      str = $(".str").html();
+      str = org_str;//$(".str").html();
       search = $("#txt").val();
       if (search.length != 0) {
         for (i = 0; i < str.length; i++) {
-          
-          if (str[i] === search) {
-            final_html = final_html + "<mark>"+str[i]+"</mark>";
+          if (str[i].toUpperCase() === search.toUpperCase()) {
+            final_html = final_html + "<span style='font-size: 30px;text-decoration:line-through;color:red;'>"+str[i]+"</span>";
             count++; 
+          
          }else
          {
             final_html = final_html + str[i];
+
          }
-         
         }
         console.log(final_html);
         $(".str").html(final_html);
-        alert("Count "+search+" is:-" + count);
+        $("#info").html("Count "+search+" is:-" + count);
       }
       
     })
