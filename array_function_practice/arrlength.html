@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arraylength</title>
+</head>
+<body>
+    <script>
+        let str = ["abc","pqr","xyz","def","jkl","rst"];
+
+        document.write("Array length is:-"+str.length+"<br>");
+
+        // str.pop();
+        // let i;
+        // for(i=0;i<str.length;i++)
+        // {
+        //     document.write(str[i]+"<br>");
+        // }
+
+
+
+        // str.unshift("hello");
+        // for(i=0;i<str.length;i++)
+        // {
+        //     document.write(str[i]+"<br>");
+        // }
+
+
+
+        // str[2] ="hi";
+        // for(i=0;i<str.length;i++)
+        // {
+        //     document.write(str[i]+"<br>");
+        // }
+
+        // delete str[1];
+        // for(i=0;i<str.length;i++)
+        // {
+        //     document.write(str[i]+"<br>");
+        // }
+
+
+        str.splice(0,2,"how","are");
+        for(i=0;i<str.length;i++){
+            document.write(str[i]+"<br>");
+        }
+
+
+    </script>
+</body>
+</html>
