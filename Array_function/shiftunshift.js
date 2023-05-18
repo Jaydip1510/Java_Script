@@ -7,32 +7,41 @@ let arr = ["abc","xyz","pqr","how","are","you"];
 //     document.write(arr[i]+"<br>");
 // }
 
+
 //<---------first Element add----------->
 // arr.unshift("jay");
 //  for(i=0;i<arr.length;i++){
 //     document.write(arr[i]+"<br>");
 //  }
+
+
 //<---------positionwish update----------->
 // arr[4] = "wow";
 //  for(i=0;i<arr.length;i++){
 //     document.write(arr[i]+"<br>")
 //  }
+
+
 //<--------positionwish delete----------->
 // delete arr[2];
 // // for(i=0;i<arr.length;i++){
 // //     document.write(arr[i]+"<br>");
 // // }
+
+
 //<----------marge two string----------->
-let b = ["hello","xyz"];
-let d = ["pqr"];
-let c = arr.concat(b,d);
- for(i=0;i<c.length;i++){
-    document.write(c[i]+"<br>");
- }
-// c.splice(2,2+"jaydip","makwana");
-// for(i=0;i<c.length;i++){
+// let b = ["hello","xyz"];
+// let d = ["pqr"];
+// let c = arr.concat(b,d);
+//  for(i=0;i<c.length;i++){
 //     document.write(c[i]+"<br>");
-// }
+//  }
+
+
+arr.splice(1,2,"jaydip","makwana");
+for(i=0;i<arr.length;i++){
+    document.write(arr[i]+"<br>");
+}
 // c.splice(0,2);
 // document.write("----------After remove------------------------");
 // for(i=0;i<c.length;i++){
