@@ -1,0 +1,49 @@
+.container{
+    height:91.5vh;
+    width:653.5px ;
+    border: 5px solid greenyellow; 
+    margin: auto;
+    border-radius: 10px;
+}
+.black{
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: rgb(198, 12, 12);
+    float: left;
+}
+.white{
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    background-color: aqua;
+    float: left;
+}
+.fa-solid{
+    color: fuchsia;
+    font-size: 70px;
+    padding-left: 15px;
+}
+.fa-chess-rook{
+    color: fuchsia;
+    font-size: 70px;
+    padding-left: 15px;
+}
+.fa-chess-knight{
+    color: fuchsia;
+    font-size: 70px;
+    padding-left: 15px;
+}
+.fa-chess-bishop{
+    color: fuchsia;
+    font: 70px;
+    padding-left: 15px;
+}
+.fa-chess-king{
+    color: fuchsia;
+    font-size: 70px;
+    padding-left: 15px;
+}
+.c1{
+    color: mediumblue;
+}

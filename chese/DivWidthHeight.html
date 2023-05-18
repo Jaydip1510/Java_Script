@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Div Height Width</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <input type="text" name="text" id="txt" value="10">
+    <button type="button" id="btn">submit</button>
+    <div class="container" style="border: 3px double red;"></div>
+    <script>
+       
+        $("#btn").on('click', function () {
+            let height,width,chk;
+            height = $("#txt").val();
+            chk = $(".container").css("height","100px");
+            console.log(chk);
+        })
+
+    </script>
+</body>
+</html>
