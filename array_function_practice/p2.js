@@ -49,7 +49,13 @@ let i;
 //    document.write(c[i]+"<br>");
 // }
 
-arr.splice(1,2,"jaydip","makwana");
+// arr.splice(1,2,"jaydip","makwana");
+// for(i=0;i<arr.length;i++){
+//    document.write(arr[i]+"<br>");
+// }
+
+arr.slice();
 for(i=0;i<arr.length;i++){
    document.write(arr[i]+"<br>");
 }
+
