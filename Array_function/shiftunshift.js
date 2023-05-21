@@ -29,7 +29,7 @@ let arr = ["abc","xyz","pqr","how","are","you"];
 // // }
 
 
-//<----------marge two string----------->
+// <----------marge two string----------->
 // let b = ["hello","xyz"];
 // let d = ["pqr"];
 // let c = arr.concat(b,d);
