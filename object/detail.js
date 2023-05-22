@@ -1,6 +1,6 @@
 // let a = {};
 
-let c = {
+let emp = {
     firstname : "makwana",
     lastname : "jaydip",
     age : "25"
@@ -14,9 +14,10 @@ let c = {
 // document.write("first name is"+a.firstname+"<br>");
 // document.write("last name is:-"+a.lastname+"<br>");
 // document.write("age is:-"+a.age+"<br>");
-c.salary = 25000;
+emp.salary = 25000;
+emp.emp_id = 1204;
 let b;
-for(b in c){
-    document.write(b+"value is"+c[b]+"<br>");
+for(b in emp){
+    document.write(b+"&nbspis:-"+emp[b]+"<br>");
 }
 
