@@ -8,5 +8,5 @@ let tripled = b.map(function(num) {
   return num * 3;
 });
 
-document.write(doubled+"<br>"); 
-document.write(tripled);
+document.write("Array Element is:-"+doubled+"<br>"); 
+document.write("Array Element is:-"+tripled);
