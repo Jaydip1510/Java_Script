@@ -1,6 +1,8 @@
 let array = [23,33,45,43,12];
 let max = array[0];
 let i;
+//array.sort(function(a,b){return b - a});
+//array[0];
 for(i=0; i<array.length;i++){
     if(array[i]>max){
         max = array[i];
@@ -8,8 +10,7 @@ for(i=0; i<array.length;i++){
 } 
 document.write(max);
 if(array.length ===0){
-    document.write("maximum no not found");
+    document.write("&nbspmaximum no not found");
 }else{
-    document.write("Maximum number found");
-
+    document.write("&nbspMaximum number found");
 }
