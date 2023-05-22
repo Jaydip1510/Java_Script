@@ -13,8 +13,8 @@ document.write("Factorial of:-"+fact+"<br>");
 
 function fibonacciSeries(n) {
     let fibonacci = [0, 1];
-  
-    for (let i = 2; i < n; i++) {
+    let i;
+    for ( i = 2; i < n; i++) {
       fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
     }
   
