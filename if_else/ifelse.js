@@ -3,11 +3,11 @@ if(a>b)
      document.write("A is maximum");
      else
      document.write("B is maximum<br>");
-let m1=85;
-    m2=65;
-    m3=79;
-let total=m1+m2+m3;
-document.write("Total is:-"+total);
+let m1 = prompt("Enter mark m1:-");
+let m2 = prompt("Enter mark m2:-");
+let m3 = prompt("Enter mark m3:-");
+let total=parseInt(m1)+parseInt(m2)+parseInt(m3);
+document.write("Total is:-"+total+"<br>");
 let per = total/3;
 if(per>=80)
       document.write("Grade A+<br> ");
