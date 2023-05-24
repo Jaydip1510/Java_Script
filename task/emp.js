@@ -10,7 +10,10 @@ let emp = {
     },
     set setdata(newval){
         this.lname = newval;
-    }
+    },
+    id : "1204"
+    
+
 
 };
 document.write("fullname is:-"+emp.fullname()+"<br>");
