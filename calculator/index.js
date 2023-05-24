@@ -5,11 +5,16 @@ function operation(val) {
         case "cls":
             document.getElementById('no1').value = '0';
             break;
-        case "/": case "*": case  "-": case  "+":
+        case "/": case "*": case "-": case "+": case ".":
             document.getElementById('no1').value = val_no1 + val.getAttribute("opcode");
             break;
         case "=":
             document.getElementById('no1').value = eval(val_no1);
+            break;
+        case "bksp":
+            let org_str = document.getElementById('no1').value;
+            let remove_one = org_str.substring(0, org_str.length - 1);
+            document.getElementById('no1').value = remove_one;
             break;
         default:
             break;
