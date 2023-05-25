@@ -4,9 +4,9 @@ class emp{
              this.name = name;
              this.age = age;
       }
-    //   displaydata(){
-    //       return this.id+"---"+this.name+"---"+this.age;
-    //   }
+      displaydata(){
+          return this.id+"---"+this.name+"---"+this.age+"<br>6";
+      }
             
 }
 let a = new emp(101,"jaydip","25");
