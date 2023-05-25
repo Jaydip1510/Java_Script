@@ -30,4 +30,5 @@ function btn(val) {
     } else {
         document.getElementById('no1').value = val.getAttribute("opcode");
     }
+    
 }
