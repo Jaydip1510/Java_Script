@@ -16,7 +16,7 @@ emp = class{
      constructor(id,name,age){
            this.id = id;
            this.name = name;
-           this.age - age;
+           this.age = age;
      }
     //       displaydata(){
     //       return this.id+"---"+this.name+"---"+this.age;
