@@ -28,3 +28,6 @@ function cleardata(){
     document.getElementById('no2').value = '';
     document.getElementById('ans').value = '';
 }
+function firstpage(){
+      window.location.href='index.html';
+}

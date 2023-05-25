@@ -8,19 +8,28 @@
      width: 345px;
      height: 70px;
      border: 2px solid black;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: orangered;
 }
 .btn1{
       height: 50px;
       width: 170px; 
-      font-weight: bold; 
+      font-weight: bold;
+      background-color:  
+     
 }
 .btn2{
       height: 50px;
       width: 176px;
       font-weight: bold;
+
+      
 }
 .btn{
       height: 50px;
       width: 84px;
       font-weight: bold;
+      font-size: 20px;
+      background-color: green;
 }
