@@ -1,0 +1,23 @@
+.table{
+         height: 385px;
+         width: 300px;
+         border: 1px solid black;
+         margin: auto;
+}
+.t1{
+        height: 50px;
+        width: 293px;
+        font-size: 20px;
+        font-weight: bold;
+}
+.btn{
+       height: 60px;
+       width: 65px;
+       margin: 5px;
+       font-size: 20px;
+       font-weight: bold;
+}
+.btn1{
+       height: 50px;
+       width: 148px;
+}
