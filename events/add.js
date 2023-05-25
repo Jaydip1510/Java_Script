@@ -29,5 +29,9 @@ function cleardata(){
     document.getElementById('ans').value = '';
 }
 function firstpage(){
-      window.location.href='index.html';
+      window.location.href='https://mail.google.com/mail/u/0/#inbox';
+}
+function pageprint(){
+
+     window.print();
 }
