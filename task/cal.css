@@ -1,5 +1,5 @@
 .table{
-         height: 385px;
+         height: 455px;
          width: 300px;
          border: 1px solid black;
          margin: auto;
@@ -7,17 +7,22 @@
 .t1{
         height: 50px;
         width: 293px;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: bold;
+        background-color: skyblue;
 }
 .btn{
        height: 60px;
        width: 65px;
        margin: 5px;
-       font-size: 20px;
+       font-size: 25px;
        font-weight: bold;
+       background-color: green;
 }
 .btn1{
        height: 50px;
        width: 148px;
+       background-color: orangered;
+       font-size: 20px;
+       font-weight: bold;
 }

@@ -5,7 +5,7 @@ function operation(val) {
         case "cls":
             document.getElementById('no1').value = '0';
             break;
-        case "/": case "*": case "-": case "+": case ".":
+        case "/": case "*": case "-": case "+": case ".":  
             document.getElementById('no1').value = val_no1 + val.getAttribute("opcode");
             break;
         case "=":
@@ -32,3 +32,8 @@ function btn(val) {
     }
     
 }
+
+
+
+
+
