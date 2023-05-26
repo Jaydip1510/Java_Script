@@ -3,6 +3,7 @@ function getval(no){
     txt +=no;
     document.getElementById('no1').value = txt;
 
+
 }
 function getans(){
     var t1 = document.getElementById('no1').value;
@@ -11,7 +12,7 @@ function getans(){
     txt = ''; 
 }
 function cleardata(){
-     document.getElementById('no1').value = '';
+     document.getElementById('no1').value = '0';
      txt = '';
 }
 function bksp(){
