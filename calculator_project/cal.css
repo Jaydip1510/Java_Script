@@ -1,0 +1,36 @@
+.table{
+          height: 415px;
+          width: 332px;
+          border: 1px solid black;
+          margin: auto;
+}
+.t1{
+       height: 60px;
+       width: 325px;
+       font-size: 25px;
+       font-weight: bold;
+       text-align: right;
+       background-color: skyblue;
+}
+.btn1{
+       height: 70px;
+       width: 164px;
+       font-size: 25px;
+       font-weight: bold;
+       background-color: orangered;
+}
+.btn2{
+       height: 70px;
+       width: 164px;
+       font-size: 25px;
+       font-weight: bold;
+       background-color: orangered;
+}
+.btn{
+       height: 60px;
+       width: 70px;
+       font-size: 25px;
+       font-weight: bold;
+       margin: 5px;
+       background-color: green;
+}

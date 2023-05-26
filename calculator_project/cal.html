@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="cal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="table">
+        <input type="text" name="no1" id="no1" class="t1" readonly>
+        <button type="button" name="btn1" id="btn1" value="cleardate" class="btn1" onclick="cleardata()">Clear</button>
+        <button type="button" name="btn2" id="btn2" value="bksp" class="btn2" onclick="bksp()"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></button>
+        <button type="button" name="btn" id="btn" class="btn" value="7" onclick="getval(7)">7</button>
+        <button type="button" name="btn" id="btn" class="btn" value="8" onclick="getval(8)">8</button>
+        <button type="button" name="btn" id="btn" class="btn" value="9" onclick="getval(9)">9</button>
+        <button type="button" name="btn" id="btn" class="btn" value="/" onclick="getval('/')">/</button>
+        <button type="button" name="btn" id="btn" class="btn" value="4" onclick="getval(4)">4</button>
+        <button type="button" name="btn" id="btn" class="btn" value="5" onclick="getval(5)">5</button>
+        <button type="button" name="btn" id="btn" class="btn" value="6" onclick="getval(6)">6</button>
+        <button type="button" name="btn" id="btn" class="btn" value="*" onclick="getval('*')">*</button>
+        <button type="button" name="btn" id="btn" class="btn" value="1" onclick="getval(1)">1</button>
+        <button type="button" name="btn" id="btn" class="btn" value="2" onclick="getval(2)">2</button>
+        <button type="button" name="btn" id="btn" class="btn" value="3" onclick="getval(3)">3</button>
+        <button type="button" name="btn" id="btn" class="btn" value="-" onclick="getval('-')">-</button>
+        <button type="button" name="btn" id="btn" class="btn" value="." onclick="getval('.')">.</button>
+        <button type="button" name="btn" id="btn" class="btn" value="0" onclick="getval(0)">0</button>
+        <button type="button" name="btn" id="btn" class="btn" value="=" onclick="getans('=')">=</button>
+        <button type="button" name="btn" id="btn" class="btn" value="+" onclick="getval('+')">+</button>
+    </div>
+    <script src="cal.js"></script>
+</body>
+</html>
