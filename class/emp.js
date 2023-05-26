@@ -5,7 +5,7 @@ class emp{
              this.age = age;
       }
       displaydata(){
-          return this.id+"---"+this.name+"---"+this.age+"<br>";
+          return this.id+"<br>Data is:-"+this.name+"<br>Data is:-"+this.age+"<br>";
       }
             
 }
