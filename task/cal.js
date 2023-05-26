@@ -7,10 +7,11 @@ function getval(no){
 function getans(){
      var t1 = document.getElementById('no1').value;
      var ans = eval(t1);
-     document.getElementById('no1').value = ans;
+     document.getElementById('no1').value = ans;   
 }
+
 function cleardata(){
    
-    document.getElementById('no1').value = '0';
+    document.getElementById('no1').value = '';
    
 }
