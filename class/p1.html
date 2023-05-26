@@ -8,5 +8,30 @@
 </head>
 <body>
     <script src="emp.js"></script>
+    <table id="tblForm"  align="center">
+        <!-- <tr>
+            <td width="25%">Id</td>
+            <td width="75%"><input type="text" readonly></td>
+        </tr> -->
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="t_name"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="text" id="t_age"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" ><button name="btnSubmit" id="btnSubmit" onclick="savedata()">Submit</button></td>
+        </tr>
+    </table>
+    <table id="tblData" border="1" align="center">
+        <tr>
+            <td width="15%">Id</td>
+            <td width="60%">Name</td>
+            <td width="15%">Age</td>
+            <td width="10%">Operation</td>
+        </tr>
+    </table>
 </body>
 </html>
