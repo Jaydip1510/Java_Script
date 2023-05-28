@@ -1,12 +1,12 @@
 let arr = [43,23,33,12,5];
 let arr2 = arr.map(myfun);
-function myfun(txt,val){
-    document.write("value is "+txt+"---"+val+"<br>");
+function myfun(val,txt){
+    document.write("value is "+val+"---"+txt+"<br>");
 }
  
 let arr3 = arr.reduceRight(myfun2);
-function myfun2(t,v){
-      return t+v;
+function myfun2(v,t){
+      return v+t;
 }
 document.getElementById("demo").innerHTML ="ReduceRight function is:-"+arr3;
 
