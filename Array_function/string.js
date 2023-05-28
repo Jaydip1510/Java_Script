@@ -32,17 +32,27 @@ arr.unshift("jaydip");
          document.write(arr[i]+"<br>");
         }
     
-//<--------- update any element ---------->
+//<--------- positionwish update  ---------->
 arr[3] = "arjun";
     for(i=0;i<arr.length;i++){
         document.write(arr[i]+"<br>");
          
     }
 
-//<-------- delete any element ----------->
+//<-------- positionwish delete ----------->
 delete arr[3];
  for(i=0;i<arr.length;i++){
     document.write(arr[i]+"<br>");
     
  }
+
+//<-------- concat two string ------------>
+
+let a = ["abc","pqr"];
+let b = ["xyz"];
+let c = arr.concat(a,b);
+  for(i=0;i<c.length;i++){
+    document.write(c[i]+"<br>");
+    
+  }
      
