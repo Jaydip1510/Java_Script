@@ -4,6 +4,7 @@ function validateForm() {
       let pwd = document.userform.pwd.value;
       let cpwd = document.userform.cpwd.value;
       let address = document.userform.address.value;
+      let email = document.userform.email.value;
       if(name == ''){
         document.userform.uname.focus();
         document.getElementById('errName').innerHTML = "Please Enter UserName";
@@ -67,4 +68,13 @@ function validateForm() {
         document.getElementById('erradd').style.color = 'red';
         return false;
       }
+      var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+      var ans = pattern.test(email);
+      if(ans == false){
+        document.userform.email.focus();
+        document.getElementById('erremail').innerHTML = "Please Vaild Email";
+        document.getElementById('erremail').style.color = 'red';
+        return false;
+      }
+
 }
