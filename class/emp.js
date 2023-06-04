@@ -22,7 +22,16 @@ let arr = [];
              if(id === 0){ id = 1; }else{ id = id + 1;}
              let obj = new emp(id,data,age); 
              arr.push(obj)
-             console.log(arr);
+             //console.log(arr);
+             arr.forEach(a => {
+                 let trHtml = '<tr>';
+                     trHtml+= '<td></td>';
+                     trHtml+= '<td></td>';
+                     trHtml+= '<td></td>';
+                     trHtml+= '<td></td>';
+                     trHtml+= '</tr>';
+                     document.getElementById("tblData").append(trHtml);
+             });
       }
 
 // document.write("Data is:-"+a.displaydata());
