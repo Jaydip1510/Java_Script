@@ -3,12 +3,13 @@ let emp = {
     e_lname :"makwana",
     e_idno : "1204",
     e_age : "25",
-    fulldetail : function(){
-        return this.e_name+" "+this.e_lname+" "+this.e_idno+" "+this.e_age;
+    fullname : function(){
+        return this.e_name+""+this.e_lname+"<br>"+this.e_idno+"<br>"+this.e_age+"<br>";
     }
 };
 emp.salary = "20000";
 emp.getinfo = function(){
     
 }
-document.write("fulldetails is:-"+emp.fulldetail());
+document.write("fullname is:-"+emp.fullname());
+document.write('salary is:-'+emp.salary);
