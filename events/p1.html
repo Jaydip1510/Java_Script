@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createEvent</title>
+</head>
+<body>
+    <button type="button" name="btn1" id="btn1" onclick="disp()">Display</button>
+    <button type="button" name="btn2" id="btn2" onclick="customdisp()">Customdisplay</button>
+    <script>
+        function disp(){
+            const e1 = new Event('myfirstevent');
+              document.addEventListener('myfirstevent',()=>{
+                   document.write('My first event is called');
+                   
+              });
+              document.dispatchEvent(e1);
+        }
+        function customdisp(){
+            const e2 = new CustomEvent('userinfo',{
+                detail :{
+                    fname : "jaydip",
+                    lname : "makwana",
+                    age : 25,
+                    salary : 25000
+                }
+            });
+            document.addEventListener('userinfo',(data)=>{
+                document.write('Your Name is:-'+data.detail.fname+"<br>");
+                document.write('Your surname is:-'+data.detail.lname+"<br>");
+                document.write('Your age is:-'+data.detail.age+"<br>");
+                document.write('Your Salary is:-'+data.detail.salary);
+                
+            });
+            document.dispatchEvent(e2);
+        }
+    </script>
+</body>
+</html>
