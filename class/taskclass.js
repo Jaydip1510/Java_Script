@@ -15,3 +15,4 @@ class student{
 }
 let s1 = new student("12","jay","25","panshina");
 s1.disp();
+
