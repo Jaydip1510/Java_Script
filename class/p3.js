@@ -9,8 +9,12 @@ class emp{
         document.write('emp Id is:-'+this.emp_id+"<br>");
         document.write('emp Name is:-'+this.emp_name+"<br>");
         document.write('emp age is:-'+this.emp_age+"<br>");
-        document.write('emp salary is:-'+this.emp_salary+"<br>");
+        document.write('emp salary is:-'+this.emp_salary+"<br><br><hr>");
     }
 }
-let e1 = new emp("1204","jaydip","25","30000");
+for(var i =0;i<10;i++)
+{
+   
+let e1 = new emp(1201+i,"jaydip","25","30000");
 e1.empdata();
+}
