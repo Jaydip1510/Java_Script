@@ -4,7 +4,7 @@ let emp = {
     e_idno : "1204",
     e_age : "25",
     fullname : function(){
-        return this.e_name+""+this.e_lname+"<br>"+this.e_idno+"<br>"+this.e_age+"<br>";
+        return this.e_name+" "+this.e_lname+"<br>"+this.e_idno+"<br>"+this.e_age+"<br>";
     }
 };
 emp.salary = "20000";

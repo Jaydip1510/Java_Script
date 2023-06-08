@@ -8,7 +8,7 @@ let emp = {
     get getdata(){
            return this.lname.toUpperCase();
     },
-    set setname(newval){
+    setname(newval){
          this.fname.newval;
     }
 };
