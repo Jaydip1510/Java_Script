@@ -19,4 +19,4 @@ let student = {
     document.write("Average Marks: " + average(student.marks));
   }
   
-  displaystudent(student);
+displaystudent(student);
