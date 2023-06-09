@@ -10,10 +10,8 @@ let user = {
         document.write('surname is:-'+user.surname+"<br>");
         document.write('Age is:-'+user.age+"<br>");
         document.write('salary is:-'+user.salary+"<br>");
-        for(let qualification of user.qualification)
-      {
-          document.write("Qualification is :"+qualification+"<br>");   
-      }
+        document.write('qulification is:-'+user.qualification);
+        
        
     }
 
