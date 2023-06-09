@@ -12,7 +12,7 @@ let user = {
         document.write('salary is:-'+user.salary+"<br>");
         document.write('qulification is:-'+user.qualification);
         
-       
+         
     }
 
 };
