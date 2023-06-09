@@ -4,7 +4,6 @@ let student = {
     marks: [85, 90, 95, 80, 75],
   };
   
-  
   function average(marks) {
     let sum = 0;
     for (let i = 0; i < marks.length; i++) {
@@ -20,5 +19,4 @@ let student = {
     document.write("Average Marks: " + average(student.marks));
   }
   
-
   displaystudent(student);
