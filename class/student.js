@@ -10,10 +10,8 @@ class student{
         document.write('<br>Your name is:-'+this.name);
         document.write('<br>Your age is:-'+this.age);
         document.write('<br>Your salary is:-'+this.salary+"<br>");
-        
-        
+          
        }
-
 }
 let s1 = new student("12","jaydip","25","20000");
 s1.display();
