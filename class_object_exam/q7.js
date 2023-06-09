@@ -9,15 +9,15 @@ function vehicle(type, tire) {
   }
   
   var carType = prompt("Enter car type:");
-  var carTire = parseInt(prompt("Enter number of tires for the car:"));
+  var carTire = prompt("Enter number of tires for the car:");
   var car = new vehicle(carType, carTire);
   
   var busType = prompt("Enter bus type:");
-  var busTire = parseInt(prompt("Enter number of tires for the bus:"));
+  var busTire = prompt("Enter number of tires for the bus:");
   var bus = new vehicle(busType, busTire);
   
   var truckType = prompt("Enter truck type:");
-  var truckTire = parseInt(prompt("Enter number of tires for the truck:"));
+  var truckTire = prompt("Enter number of tires for the truck:");
   var truck = new vehicle(truckType, truckTire);
   
   car.printDetails();
