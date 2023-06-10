@@ -10,9 +10,6 @@ let user = {
         document.write('surname is:-'+user.surname+"<br>");
         document.write('age is:-'+user.age+"<br>");
         document.write('salary is:-'+user.salary);
-        
-        
-        
     }
 };
 user.display();
