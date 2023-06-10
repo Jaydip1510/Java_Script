@@ -10,7 +10,12 @@ let user = {
         document.write('surname is:-'+user.surname+"<br>");
         document.write('Age is:-'+user.age+"<br>");
         document.write('salary is:-'+user.salary+"<br>");
-        document.write('qulification is:-'+user.qualification);     
+        // document.write('qulification is:-'+user.qualification);     
+        
+        for(let i=0; i<this.qualification.length;i++){
+            document.write(''+this.qualification[i]+"<br>");
+            
+        }
     }
 };
 user.display();
