@@ -1,4 +1,4 @@
-let val =0;
+let val = 0;
 const user = {
   username: "jaydip",
   surname: "makwana",
