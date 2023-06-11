@@ -14,12 +14,18 @@ class emp {
 let a = new emp();
 let arr = [];
 let edit_position = '';
-function editdata(index) {
-      document.getElementById('btnEditSave').style.visibility = 'visible';
-      document.getElementById('btnSubmit').style.visibility = 'hidden';
-      document.getElementById('t_name').value = arr[index].name;
-      document.getElementById('t_age').value = arr[index].age;
-      edit_position = index;
+function editdata(index,opcode) {
+      if(opcode == "EDIT")
+      {
+        document.getElementById('btnEditSave').style.visibility = 'visible';
+        document.getElementById('btnSubmit').style.visibility = 'hidden';
+        document.getElementById('t_name').value = arr[index].name;
+        document.getElementById('t_age').value = arr[index].age;
+        edit_position = index;
+      }else if(opcode == "DELETE")
+      {
+            delete arr[index];
+      }
       var tbl = '<table id="tblData" border="1" align="center">';
       tbl += '<tr>';
       tbl += '<td width="15%">Id</td>';
@@ -31,7 +37,8 @@ function editdata(index) {
       arr.forEach(a => {
             
             var index = a.id - 1;
-            let opration_html = '<a href="#" onclick="editdata(' + index + ')">Edit</a>';
+            let opration_html  = '<a href="#" onclick="editdata('+ index +',\'EDIT\')">Edit</a>';
+                opration_html += '<a href="#" onclick="editdata('+ index +',\'DELETE\')">Delete</a>';
             let trHtml = '<tr>';
             if(index === edit_position)
             {
@@ -86,7 +93,8 @@ function savedata(a) {
 
       arr.forEach(a => {
             var index = a.id - 1;
-            let opration_html = '<a href="#" onclick="editdata(' + index + ')">Edit</a>';
+            let opration_html  = '<a href="#" onclick="editdata('+ index +',\'EDIT\')">Edit</a>';
+                opration_html += '<a href="#" onclick="editdata('+ index +',\'DELETE\')">Delete</a>';
             let trHtml = '<tr>';
             if(index === edited_record)
             {
