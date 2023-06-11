@@ -22,19 +22,16 @@
             <td><input type="text" id="t_age"></td>
         </tr>
         <tr>
-            <td colspan="2" align="center" ><button name="btnSubmit" id="btnSubmit" onclick="savedata()">Submit</button></td>
+            <td colspan="2" align="center" >
+                <button name="btnSubmit" id="btnSubmit" onclick="savedata('Add')">Add</button>
+                <button name="btnEditSave" id="btnEditSave" onclick="savedata('Edit')" style="visibility: hidden;">Save</button>
+            </td>
         </tr>
+    
     </table>
     <div id="outPut">
         
     </div>
-    <table id="tblData" border="1" align="center">
-        <tr>
-            <td width="15%">Id</td>
-            <td width="60%">Name</td>
-            <td width="15%">Age</td>
-            <td width="10%">Operation</td>
-        </tr>
-    </table>
+ 
 </body>
 </html>
