@@ -55,6 +55,7 @@ function editdata(index) {
       }
 
 function savedata(a) {
+      var edited_record = "";
       var data = document.getElementById('t_name').value;
       var age = document.getElementById('t_age').value;
       if (a == "Add") {
@@ -65,6 +66,7 @@ function savedata(a) {
             //console.log(arr);
 
       } else if (a == "Edit") {
+            edited_record = edit_position;
             arr[edit_position].name = data;
             arr[edit_position].age = age;
             document.getElementById('btnEditSave').style.visibility = 'hidden';
@@ -86,10 +88,18 @@ function savedata(a) {
             var index = a.id - 1;
             let opration_html = '<a href="#" onclick="editdata(' + index + ')">Edit</a>';
             let trHtml = '<tr>';
-            trHtml += '<td>' + a.id + '</td>';
-            trHtml += '<td>' + a.name + '</td>';
-            trHtml += '<td>' + a.age + '</td>';
-            trHtml += '<td>' + opration_html + '</td>';
+            if(index === edited_record)
+            {
+                  trHtml += '<td style="background-color: lightgreen;">' + a.id +'</td>';
+                  trHtml += '<td style="background-color: lightgreen;">' + a.name +'</td>';
+                  trHtml += '<td style="background-color: lightgreen;">' + a.age + '</td>';
+                  trHtml += '<td style="background-color: lightgreen;">' + opration_html + '</td>';
+            }else{
+                  trHtml += '<td>' + a.id + '</td>';
+                  trHtml += '<td>' + a.name + '</td>';
+                  trHtml += '<td>' + a.age + '</td>';
+                  trHtml += '<td>' + opration_html + '</td>';
+            }
             trHtml += '</tr>';
             tbl = tbl + trHtml;
             
