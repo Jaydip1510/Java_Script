@@ -14,16 +14,14 @@
             age : 25,
             rollno : 12,
 
-            fullname : function(){
-                return this.fname+" "+this.lname;
+            display(){
+                document.write("fullname is:-"+student.fname+"<br>");
+                document.write('last name is:-'+student.lname+"<br>");
+                document.write('age is:-'+student.age+"<br>");
+                document.write('roll no is:-'+student.rollno+"<br>");
             }
         };
-        document.write("fullname is:-"+student.fullname()+"<br>");
-        document.write('age is:-'+student.age+"<br>");
-        document.write('roll no is:-'+student.rollno+"<br>");
-        
-        
-        
+        student.display();    
     </script>
 </body>
 </html>
