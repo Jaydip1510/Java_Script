@@ -18,6 +18,12 @@ document.getElementById('txt1').innerHTML = "<table border='1'><tr><td>jaydip</t
 
 document.getElementById('btn1').addEventListener('click',disp);
 function disp(){
-    alert('Event called...')
+    let no = "25";
+    if(no%2==0){
+        document.write('Number is Even');
+    }else{
+        document.write('Number is Odd');
+        
+    }
 }
 
