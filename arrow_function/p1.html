@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrowfunction</title>
+</head>
+<body>
+    <script>
+         class student {
+               fname = "jaydip";
+               lname = "makwana";
+               age = 25;
+               salary = 25000;
+              
+               fullname = () => this.fname+" "+this.lname;
+         }
+         let s1 = new student();
+         document.write('your fullname is:-'+s1.fullname()+"<br>");
+         document.write('Your age is:-'+s1.age+"<br>");
+         document.write('Your salary is:-'+s1.salary);
+         
+         
+         
+    </script>
+</body>
+</html>
