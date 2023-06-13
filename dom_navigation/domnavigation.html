@@ -7,26 +7,24 @@
 </head>
 <body>
     <div id="main">
-        <p id="b1" class="box">
-            <p id="txt1">lorem ipsum</p>
-            <span>Demo txt</span></p>
-      <div id="txt2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa officia. Ipsum illo hic iusto numquam commodi. Debitis velit ut fuga. Accusantium voluptatem autem vero molestiae illo vel aspernatur fugit!</div>
-      <div id="txt3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi nostrum a corrupti quasi commodi temporibus ipsum repellat voluptates ad ex. Voluptatibus nihil minima ab animi repellendus aliquam atque debitis unde.</div>
+        <p id="b1" class="box"><p id="txt1">lorem ipsum</p><span>Demo txt</span></p>
+      <!-- <div id="txt2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, culpa officia. Ipsum illo hic iusto numquam commodi. Debitis velit ut fuga. Accusantium voluptatem autem vero molestiae illo vel aspernatur fugit!</div>
+      <div id="txt3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi nostrum a corrupti quasi commodi temporibus ipsum repellat voluptates ad ex. Voluptatibus nihil minima ab animi repellendus aliquam atque debitis unde.</div> -->
     </div>
     <script>
-        let a =document.getElementById('main').childNodes[0].hasChildNodes[1];
+        // let a =document.getElementById('main').childNodes[0].hasChildNodes[1];
+        // console.log(a);
+
+        let a = document.getElementById('txt1').previousSibling;
         console.log(a);
 
-        // let a = document.getElementById('txt1').nextSibling;
-        // console.log(a.nextSibling);
+        let b = document.getElementById('b1').nextElementSibling;
+        console.log(b);
 
-        // let b = document.getElementById('b1').nextElementSibling;
-        // console.log('');
-
-        for(let i=0;i<a.length;i++){
-            console.log(i+'child Node');
+        // for(let i=0;i<a.length;i++){
+        //     console.log(i+'child Node');
             
-        }
+        // }
 
 
                 
