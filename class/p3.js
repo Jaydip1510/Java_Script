@@ -9,7 +9,7 @@ class emp{
         document.write('emp Id is:-'+this.emp_id+"<br>");
         document.write('emp Name is:-'+this.emp_name+"<br>");
         document.write('emp age is:-'+this.emp_age+"<br>");
-        document.write('emp salary is:-'+this.emp_salary+"<br><br><hr54>");
+        document.write('emp salary is:-'+this.emp_salary+"<br><br><hr>");
     }
 }
 for(var i =0;i<10;i++)

@@ -9,10 +9,13 @@ class student{
         document.write('Your Rollnumber is:-'+this.rollno);
         document.write('<br>Your name is:-'+this.name);
         document.write('<br>Your age is:-'+this.age);
-        document.write('<br>Your address is:-'+this.address);
+        document.write('<br>Your address is:-'+this.address+"<br><hr>");
         
       }
-
 }
+for(let i=0; i<10; i++){
+
+
 let s1 = new student("14","jaydip","25","panshina");
 s1.displaydata();
+}
