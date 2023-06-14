@@ -1,5 +1,4 @@
 function insertData(){
-    debugger;
     var uname = document.userform.uname.value;
     var age = document.userform.age.value;
     var salary = document.userform.sal.value;
