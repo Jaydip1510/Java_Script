@@ -9,7 +9,6 @@ class emp {
             return this.id + "<br>Data is:-" + this.name + "<br>Data is:-" + this.age + "<br>";
 
       }
-
 }
 let a = new emp();
 let arr = [];
