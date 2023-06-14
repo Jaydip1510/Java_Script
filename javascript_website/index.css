@@ -1,0 +1,9 @@
+#c1{
+      margin-left: 90%;
+}
+.d1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
