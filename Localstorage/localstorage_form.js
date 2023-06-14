@@ -2,12 +2,10 @@ function insertData(){
     var uname = document.userform.uname.value;
     var age = document.userform.age.value;
     var salary = document.userform.sal.value;
-
     let user = [uname,age,salary];
       localStorage.setItem("username",uname);
       localStorage.setItem("age",age);
-      localStorage.setItem("salary",salary)
-
+      localStorage.setItem("salary",salary);
     dispData();
 }
 function dispData(){
@@ -21,6 +19,8 @@ function dispData(){
 }
 function delData(){
     localStorage.removeItem('username');
+    localStorage.removeItem('age');
+    localStorage.removeItem('salary');
     document.getElementById('userData').innerHTML = '';
     document.getElementById('msg').innerHTML= "user Successfully deleted....";   
 }
