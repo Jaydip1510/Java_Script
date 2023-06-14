@@ -5,7 +5,7 @@ localStorage.setItem("userDetail",str);
 
 let strarray = JSON.parse(localStorage.getItem('userDetail'));
 
-document.getElementById('demo').innerHTML = "name is:-"+strarray[0]+"Age is:-"+strarray[1];
+document.getElementById('demo').innerHTML = "name is:-"+strarray[0]+"<br>"+"Age is:-"+strarray[1];
 
 
 document.getElementById("btn1").addEventListener("click",function(){
