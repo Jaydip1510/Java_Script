@@ -44,9 +44,12 @@ function fun()
     html+="</tr>";
     html+="</thead>";
     html+="<tr>";
-    html+="<td>"+cartObj.pname+"</td>";
-    html+="<td>"+cartObj.price+"</td>";
-    html+="<td>"+cartObj.qty+"</td>"; 
+    for(let i=0;i<cartObj.length;i++){
+      html+="<td>"+cartObj.pname+"</td>";
+      html+="<td>"+cartObj.price+"</td>";
+      html+="<td>"+cartObj.qty+"</td>";
+    } 
+
 }  
 function updateCartCount()
 {
