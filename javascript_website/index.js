@@ -47,11 +47,7 @@ function fun()
     html+="<td>"+cartObj.pname+"</td>";
     html+="<td>"+cartObj.price+"</td>";
     html+="<td>"+cartObj.qty+"</td>"; 
-  
 }  
-
-
-
 function updateCartCount()
 {
     var count = 0;
