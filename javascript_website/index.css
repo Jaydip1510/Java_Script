@@ -9,8 +9,11 @@
     justify-content: space-evenly;
 }
 .img{
-       height: 190px;
+       height: 200px;
 }
 .img2{
        height: 220px;
+}
+.img3{
+       height: 250px;
 }
