@@ -48,3 +48,5 @@ function updateCartCount()
     span_tag.textContent = count;
 
 }
+
+    
