@@ -37,19 +37,33 @@ function fun()
     let html = "<table class='table'>";
     html+= "<thead>";
     html+= "<tr>";
-    html+="<th scope='col'>Product_Name</th>";
-    html+="<th scope='col'>Product_price</th>";
-    html+="<th scope='col'>Product_qty</th>";
+    html+="<th scope='col'>Product Name</th>";
+    html+="<th scope='col'>Product price</th>";
+    html+="<th scope='col'>qty</th>";
+    html+="<th scope='col'>Sub total</th>";
     html+="</tr>";
     html+="</thead>";
-    
+    var tot_price = 0,
+         tot_qty  = 0;
+
     for(let i=0;i<cartArray.length;i++){
+        let subtot = 0;
+        subtot = parseInt(cartArray[i].price) * parseInt(cartArray[i].qty);
+        tot_qty = tot_qty + parseInt(cartArray[i].qty);
       html+="<tr>";
-      html+="<td>"+cartObj.pname+"</td>";
-      html+="<td>"+cartObj.price+"</td>";
-      html+="<td>"+cartObj.qty+"</td>";
+      html+="<td>"+cartArray[i].pname+"</td>";
+      html+="<td>"+cartArray[i].price+"</td>";
+      html+="<td>"+cartArray[i].qty+"</td>";
+      html+="<td>"+subtot+"</td>";
       html+="</tr>";
+      tot_price = tot_price + subtot;
     } 
+    html+="<tr>";
+      html+="<td colspan='2'>Total</td>";
+      html+="<td>"+tot_qty+"</td>";
+      html+="<td>"+tot_price+"</td>";
+      html+="</tr>";
+      html+="</html>";
     document.getElementById('staticBackdrop_body').innerHTML = html;
 }  
 function updateCartCount()
