@@ -37,19 +37,20 @@ function fun()
     let html = "<table class='table'>";
     html+= "<thead>";
     html+= "<tr>";
-    html+="<th scope='col'>#</th>";
     html+="<th scope='col'>Product_Name</th>";
     html+="<th scope='col'>Product_price</th>";
     html+="<th scope='col'>Product_qty</th>";
     html+="</tr>";
     html+="</thead>";
-    html+="<tr>";
-    for(let i=0;i<cartObj.length;i++){
+    
+    for(let i=0;i<cartArray.length;i++){
+      html+="<tr>";
       html+="<td>"+cartObj.pname+"</td>";
       html+="<td>"+cartObj.price+"</td>";
       html+="<td>"+cartObj.qty+"</td>";
+      html+="</tr>";
     } 
-
+    document.getElementById('staticBackdrop_body').innerHTML = html;
 }  
 function updateCartCount()
 {
