@@ -34,7 +34,23 @@ function fun()
     }
 
     updateCartCount();
+    let html = "<table class='table'>";
+    html+= "<thead>";
+    html+= "<tr>";
+    html+="<th scope='col'>#</th>";
+    html+="<th scope='col'>Product_Name</th>";
+    html+="<th scope='col'>Product_price</th>";
+    html+="<th scope='col'>Product_qty</th>";
+    html+="</tr>";
+    html+="</thead>";
+    html+="<tr>";
+    html+="<td>"+cartObj.pname+"</td>";
+    html+="<td>"+cartObj.price+"</td>";
+    html+="<td>"+cartObj.qty+"</td>"; 
+  
 }  
+
+
 
 function updateCartCount()
 {
@@ -49,4 +65,5 @@ function updateCartCount()
 
 }
 
-    
+
+
