@@ -65,7 +65,22 @@ function fun()
       html+="</tr>";
       html+="</html>";
     document.getElementById('staticBackdrop_body').innerHTML = html;
-}  
+
+    let arr = [];
+    let obj = {
+        pname:pname,
+        price:price,
+        qty:1
+    };
+    obj.pname= pname;
+    obj.price=price;
+    obj.qty=1;
+
+    arr.push(obj);
+    localStorage.setItem("arrDetail",JSON.stringify(arr));
+    let arrDetail = localStorage.getItem("arrDetail");
+}
+      
 function updateCartCount()
 {
     var count = 0;
