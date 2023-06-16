@@ -10,7 +10,7 @@ let student = {
       sum += marks[i];
     }
     return sum / marks.length;
-  }
+  }     
   
   function displaystudent(student) {
     document.write("Name: " + student.name+"<br>");

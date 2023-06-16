@@ -9,14 +9,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   
 function fun() 
 {
-    var cartObj = {"pname":"", "price":"", "qty":1};
+    var cartObj = {"pname":"", "price":"", "qty":1,"img":""};
     let parentDiv = this.parentNode;
+    let per_parentDiv = parentDiv.parentNode;
+    
     var firstParagraph = parentDiv.getElementsByTagName('p')[0];
     var span_tag = parentDiv.getElementsByTagName('span')[0];
+    var img = per_parentDiv.getElementsByTagName('img')[0];
+    
     var pname = firstParagraph.textContent;
     var price = span_tag.textContent;
     cartObj.pname = pname;
     cartObj.price = price;
+    cartObj.img   = img.src;
     if(cartArray.length > 0)
     {
         var foundValue = cartArray.findIndex(item => item.pname === pname);
@@ -34,9 +39,10 @@ function fun()
     }
 
     updateCartCount();
-    let html = "<table class='table'>";
+    let html = "<table class='table table-responsive'>";
     html+= "<thead>";
     html+= "<tr>";
+    html+="<th scope='col'>Product Image</th>";
     html+="<th scope='col'>Product Name</th>";
     html+="<th scope='col'>Product price</th>";
     html+="<th scope='col'>qty</th>";
@@ -51,6 +57,7 @@ function fun()
         subtot = parseInt(cartArray[i].price) * parseInt(cartArray[i].qty);
         tot_qty = tot_qty + parseInt(cartArray[i].qty);
       html+="<tr>";
+      html+="<td><img src='"+cartArray[i].img+"' height='100' width='100'/></td>";
       html+="<td>"+cartArray[i].pname+"</td>";
       html+="<td>"+cartArray[i].price+"</td>";
       html+="<td>"+cartArray[i].qty+"</td>";
@@ -59,7 +66,7 @@ function fun()
       tot_price = tot_price + subtot;
     } 
     html+="<tr>";
-      html+="<td colspan='2'>Total</td>";
+      html+="<td colspan='3'>Total</td>";
       html+="<td>"+tot_qty+"</td>";
       html+="<td>"+tot_price+"</td>";
       html+="</tr>";

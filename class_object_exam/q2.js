@@ -11,12 +11,16 @@ const user = {
       document.write("surname is : "+user.surname+"<br>");
       document.write("age is : "+user.age+"<br>");
       document.write("salary is : "+user.salary+"<br>");
+      var str = '';
       for(let qualification of user.qualifications)
       {
-          document.write("Qualification is :"+qualification+"<br>");   
+        if(str!=''){ str += ","; }
+        str += qualification; 
       }
+      document.write("Qualification is :"+str+"<br>");   
   }
 };
+user.display();
 for(let sum  in user){
   val =val+1;
 }
