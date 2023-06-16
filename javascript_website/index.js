@@ -76,9 +76,11 @@ function fun()
     obj.price=price;
     obj.qty=1;
 
-    arr.push(obj);
+        arr.push(obj);
     localStorage.setItem("arrDetail",JSON.stringify(arr));
-    let arrDetail = localStorage.getItem("arrDetail");
+    
+        let arrDetail = localStorage.getItem("arrDetail");
+   
 }  
 function updateCartCount()
 {
