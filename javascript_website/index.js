@@ -79,8 +79,7 @@ function fun()
     arr.push(obj);
     localStorage.setItem("arrDetail",JSON.stringify(arr));
     let arrDetail = localStorage.getItem("arrDetail");
-}
-      
+}  
 function updateCartCount()
 {
     var count = 0;
