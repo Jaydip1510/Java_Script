@@ -47,6 +47,7 @@ function fun()
     html+="<th scope='col'>Product price</th>";
     html+="<th scope='col'>qty</th>";
     html+="<th scope='col'>Sub total</th>";
+    html+="<th scope='col'>Action</th>";
     html+="</tr>";
     html+="</thead>";
     var tot_price = 0,
@@ -62,6 +63,7 @@ function fun()
       html+="<td>"+cartArray[i].price+"</td>";
       html+="<td>"+cartArray[i].qty+"</td>";
       html+="<td>"+subtot+"</td>";
+      html+="<td><input type='button' name='del' id='del' value='Delete' onclick= 'delData()'>";
       html+="</tr>";
       tot_price = tot_price + subtot;
     } 
@@ -88,6 +90,9 @@ function fun()
     
         let arrDetail = localStorage.getItem("arrDetail");
    
+}
+function delData(){
+    
 }  
 function updateCartCount()
 {
