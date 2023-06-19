@@ -89,11 +89,10 @@ function fun()
     localStorage.setItem("arrDetail",JSON.stringify(arr));
     
         let arrDetail = localStorage.getItem("arrDetail");
-   
+
 }
-function delData(){
-    
-}  
+
+
 function updateCartCount()
 {
     var count = 0;
