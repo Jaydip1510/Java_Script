@@ -23,6 +23,27 @@ document.getElementById('btn1').addEventListener("click",()=>{
      }
      document.studform.reset();
      display();
+
+     if(name == ''){
+        document.studform.uname.focus();
+        document.getElementById('errname').innerHTML = "Please Enter UserName";
+        document.getElementById('errname').style.color = 'red';
+     }
+     if(name.length<2){
+        document.studform.uname.focus();
+        document.getElementById('errname').innerHTML = "name Must be >2";
+        document.getElementById('errname').style.color = 'red';
+     }
+     if(age == ''){
+        document.studform.age.focus();
+        document.getElementById('errage').innerHTML = "Please Enter Age";
+        document.getElementById('errage').style.color = 'red';
+     }
+     if(age<1 || age>100){
+        document.studform.age.focus();
+        document.getElementById('errage').innerHTML = "age must be 1-100";
+        document.getElementById('errage').style.color = 'red';
+     }
 });
 
 function display(){
