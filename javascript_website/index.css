@@ -47,6 +47,15 @@
 .kart{
        height: 30px;
 }
+.carom{
+       height: 230px;
+}
+.real{
+       height: 255px;
+}
+.lofer{
+       height: 280px;
+}
 header{
     position: fixed;
     width: 100%;
