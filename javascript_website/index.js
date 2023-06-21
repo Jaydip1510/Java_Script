@@ -106,5 +106,16 @@ function updateCartCount()
 
 }
 
+function delData(){
+        cartArray=['abc'];
+        cartArray.splice(0,1);
+
+    delete html().splice(0,1,);
+    // for(let i=0;i<arrDetail.length;i--){
+    //     alert('sfjdslk');
+    //     console.log(arrDetail[i]);
+    // }
+
+}
 
 

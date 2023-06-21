@@ -44,3 +44,12 @@
 .c1:hover{
        color: yellow;
 }
+.kart{
+       height: 30px;
+}
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
