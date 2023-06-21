@@ -25,7 +25,7 @@ function dispData(){
     html += "<tr><th>Name</th><th>Age</th><th>Salary</th><th>Action</th></tr>";
     JsonData.forEach( (a,b) => {
         html += "<tr><td>"+a.uname+"</td><td>"+a.age+"</td><td>"+a.sal+"</td>";
-        html +="<td><button type='button' id='btnDel' name='btnDel' onclick='delData()'>Delete</button></td></tr>";
+        html +="<td><button type='button' id='btnDel' name='btnDel' onclick='delData("+a+")'>Delete</button></td></tr>";
 
     });
     
@@ -34,8 +34,10 @@ function dispData(){
     document.userform.age.value = '';
     document.userform.sal.value = '';
 }
-function delData(){
-    localStorage.removeItem('arrDetail');
-    document.getElementById('userData').innerHTML = '';
-    document.getElementById('msg').innerHTML= "user Successfully deleted....";   
+function delData(id){
+       let obj = JSON.parse(localStorage.getItem("arrDetail"));
+       info.JsonData.splice(id,1);
+       localStorage.setItem("arrDetail",JSON.stringify(obj));    
+       document.getElementById('msg').innerHTML= "user Successfully deleted....";
+       dispData();   
 }
