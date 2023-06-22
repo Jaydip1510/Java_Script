@@ -4,6 +4,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
     let age = document.studform.age.value;
     let sal = document.studform.sal.value;
     let cr = document.studform.cource.value;
+    let gen = document.studform.gender.value;
     let uid = document.studform.uid.value;
 
     let data = {};
@@ -11,27 +12,29 @@ document.getElementById('btn1').addEventListener("click",()=>{
         name:name,
         age:age,
         salary:sal,
-        cource:cr
+        cource:cr,
+        gender: gen
     };
 
-     let studData = JSON.parse(localStorage.getItem("studentDetail"));
-     if(studData != null){
+     let userData = JSON.parse(localStorage.getItem("studentDetail"));
+     if(userData != null){
         if(uid != ''){
-         for(let i=0; i<studData.studetInfo.length;i++){
+         for(let i=0; i<userData.studetInfo.length;i++){
             if(uid == i){
-               studData.studetInfo[i].name = name;
-               studData.studetInfo[i].age = age;
-               studData.studetInfo[i].salary = sal;
-               studData.studetInfo[i].cource = cr;
+               userData.studetInfo[i].name = name;
+               userData.studetInfo[i].age = age;
+               userData.studetInfo[i].salary = sal;
+               userData.studetInfo[i].cource = cr;
+               userData.studetInfo[i].gender = gen;
                document.studform.value = '';
 
             }
          }
-         localStorage.setItem("studentDetail",JSON.stringify(studData));
+         localStorage.setItem("studentDetail",JSON.stringify(userData));
          
         }else{
-         studData.studetInfo.push(info);
-         localStorage.setItem("studentDetail",JSON.stringify(studData));
+         userData.studetInfo.push(info);
+         localStorage.setItem("studentDetail",JSON.stringify(userData));
         }
         
      }else{
@@ -69,7 +72,8 @@ function display(){
     dt += "<th>Name</th>";
     dt +="<th>Age</th>";
     dt += "<th>Salary</th>";
-    dt +="<th>Cource</th>"
+    dt +="<th>Cource</th>";
+    dt +="<th>Gender</th>";
     dt +="<th>Action</th>";
     dt+="</tr>";
 
@@ -81,8 +85,9 @@ function display(){
             dt +="<td>"+info.studetInfo[i].age+"</td>";
             dt +="<td>"+info.studetInfo[i].salary+"</td>";
             dt +="<td>"+info.studetInfo[i].cource+"</td>";
+            dt +="<td>"+info.studetInfo[i].gender+"</td>";
             dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
-            dt +="<input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
+            dt +="   <input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
             dt +="</tr>";
 
         }
@@ -108,6 +113,7 @@ function editData(id){
                document.studform.age.value = info.studetInfo[i].age;
                document.studform.sal.value = info.studetInfo[i].salary;
                document.studform.cource.value = info.studetInfo[i].cource;
+               document.studform.gender.value = info.studetInfo[i].gender;
                document.studform.uid.value = id;
             }
           }
