@@ -64,15 +64,14 @@ function display(){
             dt +="<td>"+info.studetInfo[i].salary+"</td>";
             dt +="<td>"+info.studetInfo[i].cource+"</td>";
             dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'";
+            dt +="<td><input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'</td>";
             dt +="</tr>";
 
         }
     }
     document.getElementById('userData').innerHTML = dt;
 }
-
 // Delete Records
-
 function delData(id){
      let info = JSON.parse(localStorage.getItem("studentDetail"));
      info.studetInfo.splice(id,1);
