@@ -58,7 +58,6 @@ function display(){
     dt+="</tr>";
    
     let info = JSON.parse(localStorage.getItem("studentDetail"));
-    console.log(info);
     if(info && info.studetInfo.length > 0){     
         for(let i=0;i<info.studetInfo.length; i++){
             dt += "<tr>";
