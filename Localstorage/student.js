@@ -4,6 +4,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
     let age = document.studform.age.value;
     let sal = document.studform.sal.value;
     let cr = document.studform.cource.value;
+    let uid = document.studform.uid.value;
 
     let data = {};
     let info = {
@@ -15,13 +16,30 @@ document.getElementById('btn1').addEventListener("click",()=>{
 
      let studData = JSON.parse(localStorage.getItem("studentDetail"));
      if(studData != null){
-        studData.studetInfo.push(info);
-        localStorage.setItem("studentDetail",JSON.stringify(studData));
+        if(uid != ''){
+         for(let i=0; i<studData.studetInfo.length;i++){
+            if(uid == i){
+               studData.studetInfo[i].name = name;
+               studData.studetInfo[i].age = age;
+               studData.studetInfo[i].salary = sal;
+               studData.studetInfo[i].cource = cr;
+               document.studform.value = '';
+
+            }
+         }
+         localStorage.setItem("studentDetail",JSON.stringify(studData));
+         
+        }else{
+         studData.studetInfo.push(info);
+         localStorage.setItem("studentDetail",JSON.stringify(studData));
+        }
+        
      }else{
         data.studetInfo = [info];
         localStorage.setItem("studentDetail",JSON.stringify(data));
      }
      document.studform.reset();
+     document.studform.uid.value = '';
      display();
 
      if(name == ''){
@@ -63,8 +81,8 @@ function display(){
             dt +="<td>"+info.studetInfo[i].age+"</td>";
             dt +="<td>"+info.studetInfo[i].salary+"</td>";
             dt +="<td>"+info.studetInfo[i].cource+"</td>";
-            dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'";
-            dt +="<td><input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'</td>";
+            dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
+            dt +="<input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
             dt +="</tr>";
 
         }
@@ -80,8 +98,18 @@ function delData(id){
 }
 
 function editData(id){
-     i = document.studform.name.value;
-     i = document.studform.age.value;
-     i = document.studform.sal.value;
-     i = document.studform.cr.value;
+   
+        let info = JSON.parse(localStorage.getItem("studentDetail")); 
+        
+        if(info != null){
+          for(let i=0;i<info.studetInfo.length;i++){
+            if(i == id){
+               document.studform.uname.value = info.studetInfo[i].name;
+               document.studform.age.value = info.studetInfo[i].age;
+               document.studform.sal.value = info.studetInfo[i].salary;
+               document.studform.cource.value = info.studetInfo[i].cource;
+               document.studform.uid.value = id;
+            }
+          }
+        }   
 }
