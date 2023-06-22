@@ -76,5 +76,12 @@ function delData(id){
      let info = JSON.parse(localStorage.getItem("studentDetail"));
      info.studetInfo.splice(id,1);
      localStorage.setItem("studentDetail",JSON.stringify(info));
-     display();
+     display();    
+}
+
+function editData(id){
+     i = document.studform.name.value;
+     i = document.studform.age.value;
+     i = document.studform.sal.value;
+     i = document.studform.cr.value;
 }
