@@ -56,10 +56,11 @@ function display(){
     dt +="<th>Gender</th>";
     dt +="<th>Action</th>";
     dt+="</tr>";
-
+   
     let info = JSON.parse(localStorage.getItem("studentDetail"));
-    if(info != null){
-        for(let i=0;i<info.studetInfo.length;i++){
+    console.log(info);
+    if(info && info.studetInfo.length > 0){     
+        for(let i=0;i<info.studetInfo.length; i++){
             dt += "<tr>";
             dt +="<td>"+info.studetInfo[i].name+"</td>";
             dt +="<td>"+info.studetInfo[i].age+"</td>";
