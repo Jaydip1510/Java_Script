@@ -6,6 +6,13 @@ document.getElementById('btn1').addEventListener("click",()=>{
     let cr = document.studform.cource.value;
     let gen = document.studform.gender.value;
     let uid = document.studform.uid.value;
+    let hob = document.getElementsByName('h1');
+    let h1 = [];
+    for(let j=0;j<hob.length;j++){
+      if(hob[j].checked == true){
+          h1.push(hob[j].value);
+      }
+    }
 
     let data = {};
     let info = {
@@ -13,7 +20,8 @@ document.getElementById('btn1').addEventListener("click",()=>{
         age:age,
         salary:sal,
         cource:cr,
-        gender: gen
+        gender: gen,
+        hobby:h1
     };
 
      let userData = JSON.parse(localStorage.getItem("studentDetail"));
@@ -26,6 +34,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
                userData.studetInfo[i].salary = sal;
                userData.studetInfo[i].cource = cr;
                userData.studetInfo[i].gender = gen;
+               userData.studetInfo[i].hobby = h1;
                document.studform.value = '';
 
             }
@@ -54,6 +63,7 @@ function display(){
     dt += "<th>Salary</th>";
     dt +="<th>Cource</th>";
     dt +="<th>Gender</th>";
+    dt +="<th>Hobby</th>";
     dt +="<th>Action</th>";
     dt+="</tr>";
    
@@ -66,6 +76,7 @@ function display(){
             dt +="<td>"+info.studetInfo[i].salary+"</td>";
             dt +="<td>"+info.studetInfo[i].cource+"</td>";
             dt +="<td>"+info.studetInfo[i].gender+"</td>";
+            dt +="<td>"+info.studetInfo[i].hobby+"</td>";
             dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
             dt +="   <input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
             dt +="</tr>";
@@ -94,6 +105,14 @@ function editData(id){
                document.studform.sal.value = info.studetInfo[i].salary;
                document.studform.cource.value = info.studetInfo[i].cource;
                document.studform.gender.value = info.studetInfo[i].gender;
+
+               let hob = document.getElementsByName('h1');
+               let hdata = info.studetInfo[i].hobby;
+               for(let j=0;j<hob.length;j++){
+                  if(hdata.includes(hob[j].value)){
+                     hob[j].checked = true;
+                  }
+               }
                document.studform.uid.value = id;
             }
           }
