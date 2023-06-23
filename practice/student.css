@@ -1,0 +1,13 @@
+label{
+    width: 100px;
+}
+#btn1{
+      height: 50px;
+      width: 100px;
+      border-radius: 25px;
+      border: none;
+      background-color: blue;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+}
