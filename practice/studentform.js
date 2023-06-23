@@ -4,7 +4,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
      let age = document.studform.age.value;
      let sal = document.studform.salary.value;
      let gen = document.studform.gender.value;
-     let hob = document.studform.hobby.value;
+     let hobby = document.studform.hobby.value;
      let uid = document.studform.uid.value;
 
 
@@ -14,7 +14,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
           age:age,
           salary:sal,
           gender:gen,
-          hobby:hob
+          hobby:hobby
      };
      let empData = JSON.parse(localStorage.getItem("empDetail"));
      if(empData != null){
@@ -25,7 +25,7 @@ document.getElementById('btn1').addEventListener("click",()=>{
                empData.empInfo[i].age = age;
                empData.empInfo[i].salary = sal;
                empData.empInfo[i].gender = gen;
-               empData.empInfo[i].hobby = hob;
+               empData.empInfo[i].hobby = hobby;
                document.studform.value = '';
 
             }
