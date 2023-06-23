@@ -57,29 +57,34 @@ document.getElementById('btn1').addEventListener("click",()=>{
 });
 
 function display(){
-    let dt = "<tr>";
-    dt += "<th>Name</th>";
-    dt +="<th>Age</th>";
-    dt += "<th>Salary</th>";
-    dt +="<th>Cource</th>";
-    dt +="<th>Gender</th>";
-    dt +="<th>Hobby</th>";
-    dt +="<th>Action</th>";
-    dt+="</tr>";
+    let dt = '';
+
    
     let info = JSON.parse(localStorage.getItem("studentDetail"));
-    if(info && info.studetInfo.length > 0){     
+   
+    if(info && info.studetInfo.length > 0){
+      dt += "<tr>";
+      dt += "<th><center><b>Name</b></center></th>";
+      dt +="<th><center><b>Age</b></center></th>";
+      dt += "<th><center><b>Salary</b></center></th>";
+      dt +="<th><center><b>Cource</b></center></th>";
+      dt +="<th><center><b>Gender</b></center></th>";
+      dt +="<th><center><b>Hobby</b></center></th>";
+      dt +="<th><center><b>Action</b></center></th>";
+      dt+="</tr>"; 
+             
         for(let i=0;i<info.studetInfo.length; i++){
-            dt += "<tr>";
-            dt +="<td>"+info.studetInfo[i].name+"</td>";
-            dt +="<td>"+info.studetInfo[i].age+"</td>";
-            dt +="<td>"+info.studetInfo[i].salary+"</td>";
-            dt +="<td>"+info.studetInfo[i].cource+"</td>";
-            dt +="<td>"+info.studetInfo[i].gender+"</td>";
-            dt +="<td>"+info.studetInfo[i].hobby+"</td>";
-            dt +="<td><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
+             dt += "<tr>";
+            dt +="<td><center>"+info.studetInfo[i].name+"</center></td>";
+            dt +="<td><center>"+info.studetInfo[i].age+"</center></td>";
+            dt +="<td><center>"+info.studetInfo[i].salary+"</center></td>";
+            dt +="<td><center>"+info.studetInfo[i].cource+"</center></td>";
+            dt +="<td><center>"+info.studetInfo[i].gender+"</center></td>";
+            dt +="<td><center>"+info.studetInfo[i].hobby+"</center></td>";   
+            
+            dt +="<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
             dt +="   <input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
-            dt +="</tr>";
+            dt +="</tr></center>";
 
         }
     }
