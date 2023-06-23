@@ -59,7 +59,6 @@ document.getElementById('btn1').addEventListener("click",()=>{
 function display(){
     let dt = '';
 
-   
     let info = JSON.parse(localStorage.getItem("studentDetail"));
    
     if(info && info.studetInfo.length > 0){
