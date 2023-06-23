@@ -86,7 +86,7 @@ function fun()
     obj.qty=1;
 
         arr.push(obj);
-    localStorage.setItem("arrDetail",JSON.stringify(arr));
+        localStorage.setItem("arrDetail",JSON.stringify(arr));
     
         let arrDetail = localStorage.getItem("arrDetail");
 
@@ -111,10 +111,10 @@ function delData(){
         cartArray.splice(0,1);
 
     delete html().splice(0,1,);
-    // for(let i=0;i<arrDetail.length;i--){
-    //     alert('sfjdslk');
-    //     console.log(arrDetail[i]);
-    // }
+    for(let i=0;i<arrDetail.length;i--){
+        alert('sfjdslk');
+        console.log(arrDetail[i]);
+    }
 
 }
 
