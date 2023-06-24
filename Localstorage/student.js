@@ -80,7 +80,6 @@ function display(){
             dt +="<td><center>"+info.studetInfo[i].cource+"</center></td>";
             dt +="<td><center>"+info.studetInfo[i].gender+"</center></td>";
             dt +="<td><center>"+info.studetInfo[i].hobby+"</center></td>";   
-            
             dt +="<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick='delData("+i+")'>";
             dt +="   <input type='button' name='btdedit' id='btnedit' value='Edit' onclick='editData("+i+")'></td>";
             dt +="</tr></center>";
