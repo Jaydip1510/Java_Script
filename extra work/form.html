@@ -45,31 +45,77 @@
             </div>
           
             <div class="mb-3 container">
-                <button type="button" class="btn btn-primary mb-3" onclick="display()">Submit</button>
+                <input type="button" class="btn btn-primary mb-3" id = "btn1" value="submit">
             </div>
+
             </form>
        </div>
     </div>
   </div>
+  <table border="1" class="table table-striped" id="userData">
+              
+  </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <div class="col-auto"><script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
      <script>
+    display();
+    document.getElementById('btn1').addEventListener("click", () => {
+    let name = document.userform.name.value;
+    let age = document.userform.age.value;
+    let salary = document.userform.sal.value;
+    let email = document.userform.email.value;
 
-        function display(){
-         let arr = [];   
-           let name = document.userform.name.value;
-           let age = document.userform.age.value;
-           let sal = document.userform.sal.value;
-           let email = document.userform.email.value;
-           
-           let info = {
-               name : name,
-               age : age,
-               salary : sal,
-               email : email
-           };
+    let d1 = {};
+    let abc = {
+        name: name,
+        age: age,
+        salary: salary,
+        email:email
+    };
+    
+    let uData = JSON.parse(localStorage.getItem("empDetail"));
+    if (uData != null) {
+        uData.abcInfo.push(abc);
+        localStorage.setItem("empDetail", JSON.stringify(uData));
+    } else {
+        d1.abcInfo = [abc];
+        localStorage.setItem("empDetail", JSON.stringify(d1));
+    }
+    document.userform.reset();
+    display();
+});
+function display() {
+  let dt = "<tr>";
+    dt += "<th><center>Name</center></th>";
+    dt += "<th><center>Age</center></th>";
+    dt += "<th><center>Salary</center></th>";
+    dt += "<th><center>Email</center></th>";
+    dt +="<th><center>Action</center></th>";
+    dt += "</tr>";
+    let local = localStorage.getItem("empDetail");
+   
+    if (local != null) {
+       let abc = JSON.parse(local);    
+        for (let i = 0; i < abc.abcInfo.length; i++) {
+            dt += "<tr>";
+            dt += "<td><input type='checkbox' >&nbsp;&nbsp;<center>" + abc.abcInfo[i].name + "</center></td>";
+            dt += "<td><center>" + abc.abcInfo[i].age + "</center></td>";
+            dt += "<td><center>" + abc.abcInfo[i].salary + "</center></td>";
+            dt += "<td><center>" + abc.abcInfo[i].email + "</center></td>";
+            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+i+")'</center></td>";
+
+            dt += "</tr>";
         }
-        
+    }
+    document.getElementById("userData").innerHTML = dt;
+}
+
+function delData(id){
+        let abc = JSON.parse(localStorage.getItem("empDetail"));
+        abc.abcInfo.splice(id,1);
+        localStorage.setItem("empDetail",JSON.stringify(abc));
+        display();
+}
      </script>
 </body>
 
