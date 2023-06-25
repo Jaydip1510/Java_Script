@@ -112,7 +112,8 @@ function display() {
             dt += "<td><center>" + abc[i].age + "</center></td>";
             dt += "<td><center>" + abc[i].salary + "</center></td>";
             dt += "<td><center>" + abc[i].email + "</center></td>";
-            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+abc[i].id+")'</center></td>";
+            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+abc[i].id+")'";
+            dt += "  <input type='button' name='editData' id='editData' value='Edit' onclick = 'editData("+abc[i].id+")'</center></td>";
             dt += "</tr>";
         }
     }
