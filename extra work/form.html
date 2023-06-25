@@ -65,9 +65,11 @@
     let age = document.userform.age.value;
     let salary = document.userform.sal.value;
     let email = document.userform.email.value;
+    let id = 0;
 
     let d1 = {};
     let abc = {
+        id : id,
         name: name,
         age: age,
         salary: salary,
@@ -75,20 +77,25 @@
     };
     
     let uData = JSON.parse(localStorage.getItem("empDetail"));
-    if (uData != null) {
-        uData.abcInfo.push(abc);
+    if (uData == null || uData.length == 0) { //If UData is null then assign value empty array
+        uData = []; // Assign empty array to avoid push function error
+        abc.id = 1;
+        uData.push(abc);
+        console.log("Condition"+uData);
         localStorage.setItem("empDetail", JSON.stringify(uData));
     } else {
-        d1.abcInfo = [abc];
-        localStorage.setItem("empDetail", JSON.stringify(d1));
+         abc.id = uData[uData.length - 1].id + 1;
+         uData.push(abc);
+        localStorage.setItem("empDetail", JSON.stringify(uData));
     }
     document.userform.reset();
     display();
 });
 function display() {
   let dt = "<thead>";
-    dt += "<tr><td colspan='5'><a href='#'' class='btn btn-primary' style = float:right id = btndel>Delete</a></td></tr>";
+    dt += "<tr><td colspan='6'><a href='#'' class='btn btn-primary' style = float:right id = 'btnMultipleDelete' onclick ='deleteMultiple()' >AllDelete</a></td></tr>";
     dt += "<tr>";
+      dt += "<th><center>Id</center></th>";  
     dt += "<th><center>Name</center></th>";
     dt += "<th><center>Age</center></th>";
     dt += "<th><center>Salary</center></th>";
@@ -96,17 +103,16 @@ function display() {
     dt +="<th><center>Action</center></th>";
     dt += "</tr></thead>";
     let local = localStorage.getItem("empDetail");
-   
     if (local != null) {
        let abc = JSON.parse(local);    
-        for (let i = 0; i < abc.abcInfo.length; i++) {
+        for (let i = 0; i < abc.length; i++) {
             dt += "<tr>";
-            dt += "<td><input type='checkbox' >&nbsp;&nbsp;<center>" + abc.abcInfo[i].name + "</center></td>";
-            dt += "<td><center>" + abc.abcInfo[i].age + "</center></td>";
-            dt += "<td><center>" + abc.abcInfo[i].salary + "</center></td>";
-            dt += "<td><center>" + abc.abcInfo[i].email + "</center></td>";
-            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+i+")'</center></td>";
-
+            dt += "<td><center><input type='checkbox' name='delChkBx' index='"+abc[i].id+"'>&nbsp;&nbsp;" + abc[i].id + "</center></td>";
+            dt += "<td><center>" + abc[i].name + "</center></td>";
+            dt += "<td><center>" + abc[i].age + "</center></td>";
+            dt += "<td><center>" + abc[i].salary + "</center></td>";
+            dt += "<td><center>" + abc[i].email + "</center></td>";
+            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+abc[i].id+")'</center></td>";
             dt += "</tr>";
         }
     }
@@ -115,15 +121,35 @@ function display() {
 
 function delData(id){
         let abc = JSON.parse(localStorage.getItem("empDetail"));
-        abc.abcInfo.splice(id,1);
+        for (let i = 0; i < abc.length; i++) {
+          if(abc[i].id == id)
+          {
+            abc.splice(i,1);
+          }
+        }
         localStorage.setItem("empDetail",JSON.stringify(abc));
         display();
 }
-document.getElementById("btndel").addEventListener("click",()=>{
+function deleteMultiple()
+{
+   
     let abc = JSON.parse(localStorage.getItem("empDetail"));
-      
-  
-});
+    var delChkBx = document.getElementsByName("delChkBx");
+    console.log(delChkBx);
+    delChkBx.forEach(element => {
+      if(element.checked){
+        let idx = element.getAttribute("index");
+        for (let i = 0; i < abc.length; i++) {
+          if(abc[i].id == idx)
+          {
+            abc.splice(i,1);
+          }
+        }
+      }
+    });
+    localStorage.setItem("empDetail",JSON.stringify(abc));
+    display();
+}
      </script>
 </body>
 
