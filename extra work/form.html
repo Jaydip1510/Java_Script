@@ -14,6 +14,7 @@
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
     Launch static backdrop modal
   </button>
+ 
   
   <!-- Modal -->
   <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -85,13 +86,15 @@
     display();
 });
 function display() {
-  let dt = "<tr>";
+  let dt = "<thead>";
+    dt += "<tr><td colspan='5'><a href='#'' class='btn btn-primary' style = float:right id = btndel>Delete</a></td></tr>";
+    dt += "<tr>";
     dt += "<th><center>Name</center></th>";
     dt += "<th><center>Age</center></th>";
     dt += "<th><center>Salary</center></th>";
     dt += "<th><center>Email</center></th>";
     dt +="<th><center>Action</center></th>";
-    dt += "</tr>";
+    dt += "</tr></thead>";
     let local = localStorage.getItem("empDetail");
    
     if (local != null) {
@@ -116,6 +119,11 @@ function delData(id){
         localStorage.setItem("empDetail",JSON.stringify(abc));
         display();
 }
+document.getElementById("btndel").addEventListener("click",()=>{
+    let abc = JSON.parse(localStorage.getItem("empDetail"));
+    
+  
+});
      </script>
 </body>
 
