@@ -29,12 +29,12 @@ document.getElementById("b1").addEventListener("click", () => {
 
 function display() {
     let dt = "<tr>";
-    dt += "<th>Name</th>";
-    dt += "<th>Age</th>";
-    dt += "<th>BirthDate</th>";
-    dt += "<th>Salary</th>";
-    dt += "<th>Gender</th>";
-    dt += "<th>Action</th>";
+    dt += "<th><center>Name</center></th>";
+    dt += "<th><center>Age</center></th>";
+    dt += "<th><center>BirthDate</center></th>";
+    dt += "<th><center>Salary</center></th>";
+    dt += "<th><center>Gender</center></th>";
+    dt += "<th><center>Action</center></th>";
     dt += "</tr>";
 
     let ls = localStorage.getItem("userInfo");
@@ -43,12 +43,12 @@ function display() {
         let user = JSON.parse(ls);
         for (i = 0; i < user.length; i++) {
             dt += "<tr>";
-            dt += "<td>" + user[i].name + "</td>";
-            dt += "<td>" + user[i].age + "</td>";
-            dt += "<td>" + user[i].birthdate + "</td>";
-            dt += "<td>" + user[i].salary + "</td>";
-            dt += "<td>" + user[i].gender + "</td>";
-            dt += "<td><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData(" + i + ")'>";
+            dt += "<td><center>" + user[i].name + "</center></td>";
+            dt += "<td><center>" + user[i].age + "</center></td>";
+            dt += "<td><center>" + user[i].birthdate + "</center></td>";
+            dt += "<td><center>" + user[i].salary + "</center></td>";
+            dt += "<td><center>" + user[i].gender + "</center></td>";
+            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData(" + i + ")'></center></td>";
             dt += "</tr>";
         }
     }
