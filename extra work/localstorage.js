@@ -33,6 +33,7 @@ document.getElementById("b1").addEventListener("click", () => {
                     datainfo[i].birthdate = bdate;
                     datainfo[i].salary = salary;
                     datainfo[i].gender = gen;
+                    datainfo[i].hobby = h1;
                 }
             }
         } else {
@@ -101,7 +102,7 @@ function dataEdit(id) {
                 document.uform.g1.value = datainfo[i].gender;
 
                 let hobby = document.getElementsByName('chk');
-                let hdata = user[i].hobby;
+                let hdata = datainfo[i].hobby;
                 for (let j = 0; j < hobby.length; j++) {
                     if (hdata.includes(hobby[j].value)) {
                         hobby[j].checked = true;
