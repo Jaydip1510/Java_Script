@@ -5,7 +5,7 @@ document.getElementById("b1").addEventListener("click", () => {
     let bdate = document.uform.bdate.value;
     let salary = document.uform.sal.value;
     let gen = document.uform.g1.value;
-    let uid = document.uform.userid.value;
+    let userid = document.uform.uid.value;
     let data1 = {};
     let user = {
         name: name,
@@ -17,20 +17,19 @@ document.getElementById("b1").addEventListener("click", () => {
 
     let datainfo = JSON.parse(localStorage.getItem("userInfo"));
     if (datainfo != null) {
-        if(uid != ''){
+        if(userid != ''){
           for(let i = 0; i<datainfo.length;i++){
-            if(uid == i){
+            if(userid == i){
                 datainfo[i].name = name;
                 datainfo[i].age = age;
                 datainfo[i].birthdate = bdate;
-                datainfo[i].salary = sal;
-                datainfo[i].gender = gen;
+                datainfo[i].salary =salary;
+                datainfo[i].gender.gen;
             }
           }
         }else{
             datainfo.push(user);
-        }
-        
+        } 
         localStorage.setItem("userInfo", JSON.stringify(datainfo));
     } else {
         data1 = [user];
@@ -82,6 +81,7 @@ function dataEdit(id){
     if(datainfo != null){
         for(let i = 0; i<datainfo.length;i++){
             if(i == id){
+                document.uform.uid.value = id;
                 document.uform.ename.value = datainfo[i].name;
                 document.uform.age.value = datainfo[i].age;
                 document.uform.bdate.value = datainfo[i].birthdate;
