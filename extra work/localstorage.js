@@ -6,30 +6,38 @@ document.getElementById("b1").addEventListener("click", () => {
     let salary = document.uform.sal.value;
     let gen = document.uform.g1.value;
     let userid = document.uform.uid.value;
+    let hobby = document.getElementsByName('chk');
+    let h1 = [];
+    for (let j = 0; j < hobby.length; j++) {
+        if (hobby[j].checked == true) {
+            h1.push(hobby[j].value);
+        }
+    }
     let data1 = {};
     let user = {
         name: name,
         age: age,
         birthdate: bdate,
         salary: salary,
-        gender: gen
+        gender: gen,
+        hobby: h1
     };
 
     let datainfo = JSON.parse(localStorage.getItem("userInfo"));
     if (datainfo != null) {
-        if(userid != ''){
-          for(let i = 0; i<datainfo.length;i++){
-            if(userid == i){
-                datainfo[i].name = name;
-                datainfo[i].age = age;
-                datainfo[i].birthdate = bdate;
-                datainfo[i].salary =salary;
-                datainfo[i].gender.gen;
+        if (userid != '') {
+            for (let i = 0; i < datainfo.length; i++) {
+                if (userid == i) {
+                    datainfo[i].name = name;
+                    datainfo[i].age = age;
+                    datainfo[i].birthdate = bdate;
+                    datainfo[i].salary = salary;
+                    datainfo[i].gender = gen;
+                }
             }
-          }
-        }else{
+        } else {
             datainfo.push(user);
-        } 
+        }
         localStorage.setItem("userInfo", JSON.stringify(datainfo));
     } else {
         data1 = [user];
@@ -41,12 +49,15 @@ document.getElementById("b1").addEventListener("click", () => {
 });
 
 function display() {
-    let dt = "<tr>";
+
+    let dt = '';
+    dt += "<tr>";
     dt += "<th><center>Name</center></th>";
     dt += "<th><center>Age</center></th>";
     dt += "<th><center>BirthDate</center></th>";
     dt += "<th><center>Salary</center></th>";
     dt += "<th><center>Gender</center></th>";
+    dt += "<th><center>Hobby</center></th>";
     dt += "<th><center>Action</center></th>";
     dt += "</tr>";
 
@@ -61,26 +72,27 @@ function display() {
             dt += "<td><center>" + user[i].birthdate + "</center></td>";
             dt += "<td><center>" + user[i].salary + "</center></td>";
             dt += "<td><center>" + user[i].gender + "</center></td>";
+            dt += "<td><center>" + user[i].hobby + "</center></td>";
             dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData(" + i + ")'>";
-            dt += "   <input type='button' name='edit' id='edit' value='Edit' onclick = 'dataEdit("+i+")'</center></td>";
+            dt += "   <input type='button' name='edit' id='edit' value='Edit' onclick = 'dataEdit(" + i + ")'</center></td>";
             dt += "</tr>";
         }
     }
     document.getElementById("saveData").innerHTML = dt;
 }
-function delData(id){
+function delData(id) {
     let user = JSON.parse(localStorage.getItem("userInfo"));
-    user.splice(id,1);
-    localStorage.setItem("userInfo",JSON.stringify(user));
+    user.splice(id, 1);
+    localStorage.setItem("userInfo", JSON.stringify(user));
     display();
 
 }
 
-function dataEdit(id){
+function dataEdit(id) {
     let datainfo = JSON.parse(localStorage.getItem("userInfo"));
-    if(datainfo != null){
-        for(let i = 0; i<datainfo.length;i++){
-            if(i == id){
+    if (datainfo != null) {
+        for (let i = 0; i < datainfo.length; i++) {
+            if (i == id) {
                 document.uform.uid.value = id;
                 document.uform.ename.value = datainfo[i].name;
                 document.uform.age.value = datainfo[i].age;
@@ -88,7 +100,15 @@ function dataEdit(id){
                 document.uform.sal.value = datainfo[i].salary;
                 document.uform.g1.value = datainfo[i].gender;
 
+                let hobby = document.getElementsByName('chk');
+                let hdata = user[i].hobby;
+                for (let j = 0; j < hobby.length; j++) {
+                    if (hdata.includes(hobby[j].value)) {
+                        hobby[j].checked = true;
+                    }
+                }
+
             }
         }
-    } 
+    }
 }
