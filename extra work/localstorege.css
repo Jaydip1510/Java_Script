@@ -1,3 +1,13 @@
 label{
     width: 100px;
 }
+.btn1{
+     height: 50px;
+     width: 100px;
+     border-radius: 25px;
+     font-size: 21px;
+     font-weight: bold;
+     background-color: orangered;
+     border: none;
+     color: white;
+}
