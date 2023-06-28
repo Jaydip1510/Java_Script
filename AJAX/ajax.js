@@ -6,7 +6,7 @@ document.getElementById("btn1").addEventListener("click", ()=>{
             document.getElementById("demo1").innerHTML = this.responseText;
         }
        }
-       obj.open("GET","jstext.txt",true);
+       obj.open("POST","jstext.txt",true);
        obj.send();
        console.log(obj);
 });
