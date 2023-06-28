@@ -2,13 +2,19 @@ document.getElementById("catdata").addEventListener("click",()=>{
     let cat = document.catform.catname.value;
     let getdata = localStorage.getItem("categoryData");
     let dt  = JSON.parse(getdata);
+   
+    let data = {};
 
-    if(dt != null){
-        dt.Category.push(cat);
-        catdata = dt;
+     data.category = [
+        {
+         id:1,
+         name:cat
+      }
+    ];
+    if(data != null){
+        data.category.push();
     }else{
-         let catdata = {};
-         catdata.Category = [cat];
+        localStorage.setItem("categoryData",JSON.stringify(data)); 
     }
-    localStorage.setItem("categoryData",JSON.stringify(catdata));
+    localStorage.setItem("categoryData",JSON.stringify(data));
 });
