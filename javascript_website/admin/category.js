@@ -2,6 +2,7 @@ document.getElementById("catdata").addEventListener("click",()=>{
     let cat = document.catform.catname.value;
     let getdata = localStorage.getItem("categoryData");
     let udt  = JSON.parse(getdata);
+    
    
     let data = {};
 
