@@ -4,8 +4,8 @@ document.getElementById("catdata").addEventListener("click",()=>{
     let catinfo =  localStorage.setItem("categorydata",JSON.stringify(catname));
     if(catname != null){
         catinfo.push(catdata);
-       
-    }else{
         
+    }else{
+
     }
 })
