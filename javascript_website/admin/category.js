@@ -1,15 +1,14 @@
 document.getElementById("catdata").addEventListener("click",()=>{
-    let catname = document.catform.catname.value;
-    let catdata = {};
-    let category = {
-        id:id,
-        name:catname
-    }
-    let catinfo =  localStorage.setItem("categorydata",JSON.stringify(catname));
-    if(catname != null){
-        catinfo.push(category);
-        let cat = catinfo;
+    let cat = document.catform.catname.value;
+    let getdata = localStorage.getItem("categoryData");
+    let dt  = JSON.parse(getdata);
+
+    if(dt != null){
+        dt.Category.push(cat);
+        catdata = dt;
     }else{
-         
+         let catdata = {};
+         catdata.Category = [cat];
     }
-})
+    localStorage.setItem("categoryData",JSON.stringify(catdata));
+});
