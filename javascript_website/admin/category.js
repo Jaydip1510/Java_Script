@@ -22,7 +22,4 @@ document.getElementById("catdata").addEventListener("click",()=>{
     }
    
 });
-
-
-// udt.category.push(dt);
-// localStorage.setItem("categoryData",JSON.stringify(udt)); 
+ 
