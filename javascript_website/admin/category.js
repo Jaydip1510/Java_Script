@@ -5,15 +5,15 @@ document.getElementById("catdata").addEventListener("click",()=>{
    
     let data = {};
 
-     data.category = [
-        {
-         id:1,
-         name:cat
-      }
-    ];
+       dt = {
+        id:1,
+        name:cat
+     }
+     
     if(data != null){
-        data.category.push();
+        data.category.push(dt);
     }else{
+        data.category = [dt];
         localStorage.setItem("categoryData",JSON.stringify(data)); 
     }
     localStorage.setItem("categoryData",JSON.stringify(data));
