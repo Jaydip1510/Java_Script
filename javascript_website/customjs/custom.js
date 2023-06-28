@@ -1,4 +1,5 @@
-let userdata = localStorage.getItem("categoryData");
+let userdata =JSON.parse(localStorage.getItem("categoryData"));
+
 let userdata1 = {};
 let row = '';
 for(let i=0; i<userdata.category.length;i++){
