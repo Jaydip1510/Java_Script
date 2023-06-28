@@ -20,5 +20,14 @@ document.getElementById("catdata").addEventListener("click",()=>{
         data.category = [dt];
         localStorage.setItem("categoryData",JSON.stringify(data)); 
     }
+    document.catform.reset();
 });
- 
+
+document.getElementById('DelData').addEventListener("click",()=>{
+    let getdata = localStorage.getItem("categoryData");
+    if(getdata != null){
+    getdata = JSON.parse(getdata);
+    getdata.category.splice(1,1);
+    localStorage.setItem("categoryData",JSON.stringify(getdata));
+}
+});
