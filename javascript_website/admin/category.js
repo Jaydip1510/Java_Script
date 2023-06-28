@@ -20,6 +20,5 @@ document.getElementById("catdata").addEventListener("click",()=>{
         data.category = [dt];
         localStorage.setItem("categoryData",JSON.stringify(data)); 
     }
-   
 });
  
