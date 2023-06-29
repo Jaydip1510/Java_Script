@@ -1,4 +1,3 @@
-
 // Insert category
 document.getElementById("catdata").addEventListener("click",()=>{
     let cat = document.catform.catname.value;
