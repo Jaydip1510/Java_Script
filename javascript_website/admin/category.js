@@ -44,7 +44,6 @@ function display(){
             d1 +="<td><center><input type='button' name='catdel' id='catdel' value='Delete' onclick='delCat("+i+")'>";
             d1 +="   <input type='button' name='catedit' id='catedit' value='Edit' onclick='editCat("+i+")'></td>";
             d1 +="</tr></center>";
-        
         }
     }
     document.getElementById('tbl').innerHTML = d1;
@@ -72,5 +71,3 @@ function editCat(id){
         }
        } 
     }
-
-
