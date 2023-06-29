@@ -1,8 +1,9 @@
 
+// Insert category
 document.getElementById("catdata").addEventListener("click",()=>{
     let cat = document.catform.catname.value;
     let getdata = localStorage.getItem("categoryData");
-    
+// create blank object [localstorege formate]
     let data = {};
     let dt = {
         id:1,
