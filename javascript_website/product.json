@@ -1,0 +1,142 @@
+[
+    {
+        "product_id": 1,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/iphone.jpeg",
+        "product_name": "Apple iPhone 14 Plus (128 GB) - Blue",
+        "product_price": "160000"
+    },
+    {
+        "product_id": 2,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/leptop1.png",
+        "product_name": "Acer One Core i3 11th Gen - (8 GB/256 GB SSD)",
+        "product_price": "29990"
+    },
+    {
+        "product_id": 3,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/smartwatch.png",
+        "product_name": "Black Case Black Strap Electronic Digital Watch - For Boys 8yviq- I Square Black T50 LED",
+        "product_price": "160"
+    },
+    {
+        "product_id": 4,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/formalshoes.png",
+        "product_name": "Awesome Lace Up For Men ",
+        "product_price": "3490"
+    },
+    {
+        "product_id": 5,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/t-shirt.jpg",
+        "product_name": "Men Printed Round Neck Cotton Blend Black T-Shirt ",
+        "product_price": "261"
+    },
+    {
+        "product_id": 6,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/mouse1.jpg",
+        "product_name": "HP 250 Wireless Optical Mouse  ",
+        "product_price": "624"
+    },
+    {
+        "product_id": 7,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/shirt.webp",
+        "product_name": "Men Slim Fit Solid Spread Collar Casual Shirt ",
+        "product_price": "449"
+    },
+    {
+        "product_id": 8,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/blutooth",
+        "product_name": "CANDYVILLA I7 Twins Wireless Earbuds With Portable Charging Case Smart Headphones ",
+        "product_price": "449"
+    },
+    {
+        "product_id": 9,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/glub.jpg",
+        "product_name": "abtin Platinum Gloves Series | Left Handed | Hand Crafted Leather Palm | Youth Size | Batting Gloves  (Blue)\n        ",
+        "product_price": "1574"
+    },
+    {
+        "product_id": 10,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/book.jpg",
+        "product_name": "Chintan Karo, Chinta Nahin  (Hindi, Paperback, Vivekananda Swami) book. ",
+        "product_price": "400"
+    },
+    {
+        "product_id": 11,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/mixer.jpg",
+        "product_name": "ZunVolt Power MG5 500 Mixer Grinder  ",
+        "product_price": "998"
+    },
+    {
+        "product_id": 12,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/kurto.jpg",
+        "product_name": "Men Printed Pure Cotton Straight Kurta  (Yellow)",
+        "product_price": "372"
+    },
+    {
+        "product_id": 13,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/theater.jpg",
+        "product_name": "etmax NANO BLACK 30 W Bluetooth Home Theatre ",
+        "product_price": "999"
+    },
+    {
+        "product_id": 14,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/leptopback.jpg",
+        "product_name": "Large 35 L Laptop Backpack Spacy unisex backpack..(Blue)",
+        "product_price": "733"
+    },
+    {
+        "product_id": 15,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/smartglass.jpg",
+        "product_name": "Alchiko Newest Superior Sound Quality..(Smart Glasses, Black) ",
+        "product_price": "655"
+    },
+    {
+        "product_id": 16,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/washing.jpg",
+        "product_name": "Washing Machine with In-built Heater",
+        "product_price": "30990"
+    },
+    {
+        "product_id": 17,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/armywatch.jpg",
+        "product_name": "Military Green Army Camouflage Sport watch",
+        "product_price": "252"
+    },
+    {
+        "product_id": 18,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/careom.jpg",
+        "product_name": "amrita [20 inch] Premium Quality Smooth & Shiny Glossy Small Carrom",
+        "product_price": "494"
+    },
+    {
+        "product_id": 19,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/realme.jpg",
+        "product_name": "realme C33 2023 (Aqua Blue, 128 GB)(4 GB RAM)",
+        "product_price": "10499"
+    },
+    {
+        "product_id": 20,
+        "catogory_id": 1,
+        "product_img": "http://127.0.0.1:5500/loafer.jpg",
+        "product_name": "Loafers For Men  (Brown) ",
+        "product_price": "649"
+    }
+]
