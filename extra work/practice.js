@@ -38,6 +38,7 @@ document.getElementById("btn1").addEventListener("click", () => {
         localStorage.setItem("empDetail", JSON.stringify(e1));
     }
     document.empform.reset();
+    
     display();
 });
 
