@@ -9,7 +9,7 @@ document.getElementById("btn").addEventListener("click",()=>{
         prodname:pname,
         price:price
     };
-    let data = JSON.parse(localStorage.getItem("productDetail"));
+    let data = JSON.parse(data);
     if(data != null){
         data.push(pdetail);
         localStorage.setItem("productDetail",JSON.stringify(pdetail));
