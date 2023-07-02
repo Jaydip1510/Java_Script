@@ -123,7 +123,7 @@ function delete_product(id){
     let data = JSON.parse(localStorage.getItem("productDetail"));
     for (let i = 0; i < data.length; i++) {
         if(id == data[i].product_id){
-    data.splice(i,1);
+         data.splice(i,1);
         }
     }
     localStorage.setItem("productDetail",JSON.stringify(data));
