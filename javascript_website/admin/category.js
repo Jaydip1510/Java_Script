@@ -13,26 +13,26 @@ document.getElementById("catdata").addEventListener("click", () => {
     if (getdata != null) {
         getdata =  JSON.parse(getdata);
         if (uid.length != 0) {
-            for(let i=0; i<getdata.category.length;i++){
-                if(uid == getdata.category[i].id){
-                    getdata.category[i].name = cat;
+            for(let i=0; i<getdata.length;i++){
+                if(uid == getdata[i].id){
+                    getdata[i].name = cat;
                 }
             }
 
             document.getElementById('uid').value = '';
         } else {
            
-            let len = getdata.category.length;
+            let len = getdata.length;
             dt = {
                 id: len + 1,
                 name: cat
             }
-            getdata.category.push(dt);
+            getdata.push(dt);
    
         }
         localStorage.setItem("categoryData", JSON.stringify(getdata));
     } else {
-        data.category = [dt];
+        data = [dt];
         localStorage.setItem("categoryData", JSON.stringify(data));
     }
     document.catform.reset();
@@ -51,12 +51,12 @@ function display() {
         d1 += "<th>Action</th>";
         d1 += "</tr>";
 
-        for (i = 0; i < d2.category.length; i++) {
+        for (i = 0; i < d2.length; i++) {
             d1 += "<tr>";
-            d1 += "<td>" + d2.category[i].id + "</td>";
-            d1 += "<td>" + d2.category[i].name + "</td>";
-            d1 += "<td><center><input type='button' name='catdel' id='catdel' value='Delete' onclick='delCat(" + d2.category[i].id + ")'>";
-            d1 += "   <input type='button' name='catedit' id='catedit' value='Edit' onclick='editCat(" + d2.category[i].id + ")'></td>";
+            d1 += "<td>" + d2[i].id + "</td>";
+            d1 += "<td>" + d2[i].name + "</td>";
+            d1 += "<td><center><input type='button' name='catdel' id='catdel' value='Delete' onclick='delCat(" + d2[i].id + ")'>";
+            d1 += "   <input type='button' name='catedit' id='catedit' value='Edit' onclick='editCat(" + d2[i].id + ")'></td>";
             d1 += "</tr></center>";
         }
     }
@@ -68,10 +68,10 @@ function delCat(id) {
     if (user != null) {
         let id1 = id - 1;
         let disp = JSON.parse(user);
-        disp.category.splice(id1, 1);
+        disp.splice(id1, 1);
         let j = 1;
-        for (let i = 0; i < disp.category.length; i++) {
-            disp.category[i].id = j;
+        for (let i = 0; i < disp.length; i++) {
+            disp[i].id = j;
             j++;
         }
         localStorage.setItem("categoryData", JSON.stringify(disp));
@@ -83,11 +83,11 @@ function editCat(id) {
     let editdata = localStorage.getItem("categoryData");
     let data = JSON.parse(editdata);
 
-    for (let i = 0; i < data.category.length; i++) {
-        if (id == data.category[i].id) {
+    for (let i = 0; i < data.length; i++) {
+        if (id == data[i].id) {
 
-            document.catform.catname.value = data.category[i].name;
-            document.catform.uid.value = data.category[i].id;
+            document.catform.catname.value = data[i].name;
+            document.catform.uid.value = data[i].id;
         }
     }
 }
