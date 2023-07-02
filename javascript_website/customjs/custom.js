@@ -4,7 +4,7 @@ let userdata =JSON.parse(storageData);
 
 console.log(userdata);
 let row = '';
-for(let i=0; i<userdata.category.length;i++){
-   row += "<li><a class='dropdown-item' href='#'>"+userdata.category[i].name+"</a></li>";
+for(let i=0; i<userdata.length;i++){
+   row += "<li><a class='dropdown-item' href='index.html?cat_id="+userdata[i].id+"'>"+userdata[i].name+"</a></li>";
 }
 document.getElementById('catid').innerHTML = row;

@@ -1,48 +1,60 @@
 var cartArray = [];
 const gc_local_storage = 'CartDetail';
 window.addEventListener("DOMContentLoaded", (event) => {
+    /* 
     fetch("./product.json")
-        .then((res) => {
-            return res.json();
-        })
-        .then((data) => {
-            var row = 0;
-            var html = '';
-            for (var i = 0; i < data.length; i++) {
-                if (row == 0) {
-                    html += '<div class="container-fluid">';
-                    html += '<div class="product-list">';
-                    html += '<div class="row">';
-                }
-                html += '<div class="col-md-3 col-sm-6">';
-                html += '<div class="white-box">';
-                html += '<div class="wishlist-icon">';
-                html += '<a href="javascript:void(0);"><span class="badge badge-success">'+data[i].catogory_name+'</span></a>';
-                html += '</div>';
-                html += '<div class="product-img">';
-                html += '<img class="pic-1" src="' + data[i].product_img + '"  height="150" width="150">';
-                html += '</div>';
-                html += '<div class="product-bottom">';
-                html += '<div class="product-name">' + data[i].product_name + '</div>';
-                html += '<div class="price">';
-                html += '<span class="rupee-icon">₹</span>';
-                html += '<span class="product-price">'+ data[i].product_price + '</sapn>';
-                html += '</div>';
-               html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Card</button>';
-                html += '</div>';
-                html += '</div>';
-                html += '</div>';
-                row++;
-                if (row == 4) {
-                    html += '</div>';
-                    html += '</div>';
-                    html += '</div>';
-                    row = 0;
-                }
-            }
-            document.getElementById('product_page').innerHTML = html;
-        });
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        
+    });
+    */
+    var queryString = getQueryString("cat_id");
+    let data = JSON.parse(localStorage.getItem("productDetail"));
 
+    let filtered = data.filter((data) => {
+        return data.catogory_id == queryString;
+    });
+    if (filtered.length > 0) {
+        data = filtered;
+    }
+    var row = 0;
+    var html = '';
+    for (var i = 0; i < data.length; i++) {
+
+        if (row == 0) {
+            html += '<div class="container-fluid">';
+            html += '<div class="product-list">';
+            html += '<div class="row">';
+        }
+        html += '<div class="col-md-3 col-sm-6">';
+        html += '<div class="white-box">';
+        html += '<div class="wishlist-icon">';
+        html += '<a href="javascript:void(0);"><span class="badge badge-success">' + data[i].catogory_name + '</span></a>';
+        html += '</div>';
+        html += '<div class="product-img">';
+        html += '<img class="pic-1" src="' + data[i].product_img + '"  height="150" width="150">';
+        html += '</div>';
+        html += '<div class="product-bottom">';
+        html += '<div class="product-name">' + data[i].product_name + '</div>';
+        html += '<div class="price">';
+        html += '<span class="rupee-icon">₹</span>';
+        html += '<span class="product-price">' + data[i].product_price + '</sapn>';
+        html += '</div>';
+        html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Card</button>';
+        html += '</div>';
+        html += '</div>';
+        html += '</div>';
+        row++;
+        if (row == 4) {
+            html += '</div>';
+            html += '</div>';
+            html += '</div>';
+            row = 0;
+        }
+    }
+    document.getElementById('product_page').innerHTML = html;
     /** Temp Logic Start
     var Carditems = document.getElementsByClassName("card");
     var final_array = [];
@@ -73,13 +85,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     }
     console.log(final_array);
     /** Temp Logic End */
-    
-   /* -- Not Required For New Logic -- 
-   var items = document.getElementsByClassName("add-to-cart");
-    for (var i = 0; i < items.length; i++) {
-        items[i].addEventListener('click', fun);
-    }
-    */
+
+    /* -- Not Required For New Logic -- 
+    var items = document.getElementsByClassName("add-to-cart");
+     for (var i = 0; i < items.length; i++) {
+         items[i].addEventListener('click', fun);
+     }
+     */
 });
 function cartTable() {
     var count = 0;
@@ -137,22 +149,21 @@ function cartTable() {
     let arrDetail = localStorage.getItem(gc_local_storage);
     document.getElementById('staticBackdrop_body').innerHTML = html;
 }
-function add_to_cart(btn)
-{
+function add_to_cart(btn) {
     var cartObj = { "pname": "", "price": "", "qty": 1, "img": "" };
-    let parentDiv       = btn.parentNode;
-    let per_parentDiv   = parentDiv.parentNode;
-    
-    var img_res         = per_parentDiv.getElementsByTagName('img')[0];
-    var prod_name_div   = per_parentDiv.getElementsByClassName('product-name')[0];
+    let parentDiv = btn.parentNode;
+    let per_parentDiv = parentDiv.parentNode;
+
+    var img_res = per_parentDiv.getElementsByTagName('img')[0];
+    var prod_name_div = per_parentDiv.getElementsByClassName('product-name')[0];
     var prod_price_span = per_parentDiv.getElementsByClassName('product-price')[0];
-  
+
     var pname = prod_name_div.textContent;
     var price = prod_price_span.textContent;
     var img_src = img_res.src;
     cartObj.pname = pname;
     cartObj.price = price;
-    cartObj.img   = img_src;
+    cartObj.img = img_src;
     if (cartArray.length > 0) {
         var foundValue = cartArray.findIndex(item => item.pname === pname);
         if (foundValue === -1) {
@@ -173,5 +184,10 @@ function delData(del_idx) {
 
 
 }
-
+function getQueryString(field, url) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+}
 
