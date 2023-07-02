@@ -21,13 +21,14 @@ document.getElementById("btn").addEventListener("click",()=>{
     let imag  = document.product.pimg.value;
     let pname = document.product.pname.value;
     let price = document.product.price.value;
-
+    let catid = document.product.category.value;
+    
     
     let pdetail = {
         image:imag,
         prodname:pname,
         price:price,
-        catgory_id:1,
+        catgory_id:catid
     };
     console.log(pdetail);
     let data = JSON.parse(localStorage.getItem("productDetail"));
@@ -41,7 +42,6 @@ document.getElementById("btn").addEventListener("click",()=>{
         localStorage.setItem("productDetail",JSON.stringify(data));
     }else{
         console.log("Else Condition");
-        
         let pdata = [];
         pdata.push(pdetail);
         console.log("Else Condition + Afer Push");

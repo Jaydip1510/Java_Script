@@ -33,6 +33,7 @@ document.getElementById("catdata").addEventListener("click", () => {
         localStorage.setItem("categoryData", JSON.stringify(getdata));
     } else {
         data = [dt];
+        
         localStorage.setItem("categoryData", JSON.stringify(data));
     }
     document.catform.reset();
