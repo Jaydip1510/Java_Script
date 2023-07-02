@@ -25,12 +25,11 @@ document.getElementById("btn").addEventListener("click",()=>{
     let pname = document.product.pname.value;
     let price = document.product.price.value;
     let catid = document.product.category.value;
+    let proid = document.product.pid.value;
     let found = category_data.find(function (element) {
         return element.id == catid;
     });
     let catname = found.name;
-    console.log(catname);
-    
     let pdetail = {
         "product_id" : 0,
         "catogory_id": catid,
@@ -40,25 +39,36 @@ document.getElementById("btn").addEventListener("click",()=>{
         "product_price":price
 
     };
-  //  console.log(pdetail);
     let data = JSON.parse(localStorage.getItem("productDetail"));
-   // console.log("Data");
-    //console.log(data);
     if(data != null){
-      //  console.log("If Condition");
-        data.push(pdetail);
-        //console.log("After Push");
-        //console.log(data);
+        if(proid.length > 0){
+             for(let i = 0; i < data.length; i++){
+                if(proid == data[i].product_id){
+                data[i].product_img     = imag;
+                data[i].product_name    = pname;
+                data[i].product_price   = price;
+                data[i].catogory_id     = catid;
+                data[i].catogory_name   = catname;
+              }
+            }
+        }else{
+            pdetail.product_id = 1;
+            let len = data.length;
+            if(len > 0)
+            {
+                pdetail.product_id =  len + 1;
+            }
+            data.push(pdetail);
+        }
         localStorage.setItem("productDetail",JSON.stringify(data));
     }else{
-       // console.log("Else Condition");
         let pdata = [];
         pdata.push(pdetail);
-        //console.log("Else Condition + Afer Push");
-        //console.log(pdata);
         localStorage.setItem("productDetail",JSON.stringify(pdata));
     }
     document.product.reset();
+    document.product.pid.value = '';
+    
     display();
 });
 
@@ -94,9 +104,28 @@ function display(){
 }
 function edit_product(id)
 {
+
   let prodata = localStorage.getItem("productDetail");
   let data = JSON.parse(prodata);  
     for (let i = 0; i < data.length; i++) {
-      
+           if(id == data[i].product_id){
+            document.product.pid.value = id;
+            document.product.pimg.value = data[i].product_img;
+            document.product.pname.value = data[i].product_name;
+            document.product.price.value = data[i].product_price;
+            document.product.cat_id.value = data[i].catogory_id;
+
+           }  
   } 
+}
+
+function delete_product(id){
+    let data = JSON.parse(localStorage.getItem("productDetail"));
+    for (let i = 0; i < data.length; i++) {
+        if(id == data[i].product_id){
+    data.splice(i,1);
+        }
+    }
+    localStorage.setItem("productDetail",JSON.stringify(data));
+    display();   
 }
