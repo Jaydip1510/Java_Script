@@ -1,4 +1,4 @@
-
+let gd_image_data = '';
 window.addEventListener("DOMContentLoaded", (event) => {
     display();
     var cat_html = '';
@@ -8,14 +8,24 @@ window.addEventListener("DOMContentLoaded", (event) => {
         category_data = JSON.parse(category_data);
             category_data.forEach(element => {
                 cat_html+="<option value='"+element.id+"'>"+element.name+"</option>"
-            });
-        
+            });   
     }
     document.getElementById("category").innerHTML = cat_html;
 
 });
 
 document.getElementById("btn").addEventListener("click",()=>{
+
+    let pdetail = {
+        "product_id" : 0,
+        "catogory_id": "",
+        "catogory_name": "",
+        "product_img": "",
+        "product_name": "",
+        "product_price":""
+    };
+
+
     let category_data = localStorage.getItem("categoryData");
     if(category_data != null)
     {
@@ -26,40 +36,40 @@ document.getElementById("btn").addEventListener("click",()=>{
     let price = document.product.price.value;
     let catid = document.product.category.value;
     let proid = document.product.pid.value;
-    let imag  = document.getElementsByName("pimg[]");
+    
+    
+
+
+    /*let imag  = document.getElementById("pimg");
     if(imag.length > 0){
         for(let n = 0;n<imag.length; n++)
         {
-            console.log(imag[n].files[0]);
+            // console.log(imag[n].files[0]);
             let ab = new FileReader();
             ab.readAsDataURL(imag[n].files[0]);        
             ab.addEventListener("load",(ev)=>{
-                localStorage.setItem("productDetail",ab.result);
-                console.log(ev);
+                pdetail.product_img =  ab.result;
             });
-        } 
+        }     
         
-        
-     }
+     }*/
+     
     let found = category_data.find(function (element) {
         return element.id == catid;
     });
     let catname = found.name;
-    let pdetail = {
-        "product_id" : 0,
-        "catogory_id": catid,
-        "catogory_name": catname,
-        "product_img": imag,
-        "product_name": pname,
-        "product_price":price
-
-    };
-    let data = JSON.parse(localStorage.getItem("productDetail"));
-    if(data != null){
+    pdetail.catogory_id    = catid;
+    pdetail.catogory_name  = catname;
+    pdetail.product_name   = pname;
+    pdetail.product_price  = price;
+    pdetail.product_img =   gd_image_data;
+    let data = localStorage.getItem("productDetail");
+    if(data != null && data.length > 0){
+        data = JSON.parse(data);
         if(proid.length > 0){
              for(let i = 0; i < data.length; i++){
                 if(proid == data[i].product_id){
-                data[i].product_img     = imag;
+                data[i].product_img     = gd_image_data;
                 data[i].product_name    = pname;
                 data[i].product_price   = price;
                 data[i].catogory_id     = catid;
@@ -82,7 +92,9 @@ document.getElementById("btn").addEventListener("click",()=>{
         localStorage.setItem("productDetail",JSON.stringify(pdata));
     }
     document.product.reset();
+    document.getElementById('image-preview').innerHTML = '';
     document.product.pid.value = '';
+
     
     display();
 });
@@ -100,13 +112,13 @@ function display(){
 
       let prd = localStorage.getItem("productDetail");
 
-      if(prd != null){
+      if(prd != null && prd.length > 0 ){
         let prddetail = JSON.parse(prd);
         console.log(prddetail);
         for(let i = 0; i<prddetail.length;i++){
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
-            pdt +="<td> <img src='"+prddetail[i].product_img+"' alt='' name='prod_img' id='prod_img' height='200px' width='200px'></td>";
+            pdt +="<td> <img src='"+prddetail[i].product_img+"' alt='' name='prod_img' id='prod_img' height='110px' width='110px'></td>";
             pdt +="<td>"+prddetail[i].product_name+"</td>";
             pdt +="<td>"+prddetail[i].product_price+"</td>";
             pdt +="<td>"+prddetail[i].catogory_id+"</td>";
@@ -126,7 +138,11 @@ function edit_product(id)
     for (let i = 0; i < data.length; i++) {
            if(id == data[i].product_id){
             document.product.pid.value = id;
-            document.product.pimg.value = data[i].product_img;
+            document.getElementById('image-preview').innerHTML = `
+            <img src="${data[i].product_img}" alt="${data[i].product_name}" width="150" height="150">
+        `;
+        //
+            gd_image_data = data[i].product_img;
             document.product.pname.value = data[i].product_name;
             document.product.price.value = data[i].product_price;
             document.product.cat_id.value = data[i].catogory_id;
@@ -143,4 +159,22 @@ function delete_product(id){
     }
     localStorage.setItem("productDetail",JSON.stringify(data));
     display();   
+}
+function readFile(input)
+{
+    const div = document.getElementById('image-preview');
+    let file = input.files[0]; 
+    let fileReader = new FileReader(); 
+    fileReader.readAsDataURL(file); 
+    fileReader.onload = function(e) {
+        gd_image_data = e.target.result;
+        div.innerHTML = `
+            <img src="${e.target.result}" alt="${file.name}" width="150" height="150">
+        `;
+        
+    }; 
+    fileReader.onerror = function() {
+      alert(fileReader.error);
+    }; 
+    
 }

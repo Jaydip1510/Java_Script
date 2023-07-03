@@ -9,8 +9,8 @@
     <form name="product" id="product" enctype="multipart/form-data">
         <input type="hidden" name="pid" id="pid">
         <label for="">Product_Image:-</label>
-        <input type="file" name="pimg[]" id="pimg" accept=".jpg,.jpeg,.png,.gif"><br><br>
-        
+        <input type="file" name="pimg" id="pimg" accept=".jpg,.jpeg,.png,.gif" onchange="readFile(this)">
+        <div id="image-preview"></div><br><br>
         <label for="">Produt_Name:-</label>
         <input type="text" name="pname" id="pname"><br><br>
 
