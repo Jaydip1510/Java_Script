@@ -33,9 +33,8 @@ document.getElementById("btn").addEventListener("click",()=>{
             console.log(imag[n].files[0]);
             let ab = new FileReader();
             ab.readAsDataURL(imag[n].files[0]);        
-            ab.addEventListener("loadend",(ev)=>{
+            ab.addEventListener("load",(ev)=>{
                 localStorage.setItem("productDetail",ab.result);
-                document.getElementById("prod_img").src = r.result;
                 console.log(ev);
             });
         } 
@@ -103,6 +102,7 @@ function display(){
 
       if(prd != null){
         let prddetail = JSON.parse(prd);
+        console.log(prddetail);
         for(let i = 0; i<prddetail.length;i++){
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
