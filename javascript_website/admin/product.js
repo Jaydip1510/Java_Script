@@ -106,7 +106,7 @@ function display(){
         for(let i = 0; i<prddetail.length;i++){
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
-            pdt +="<td> <img src='' alt='' name='prod_img' id='prod_img' height='300px' width='300px'></td>";
+            pdt +="<td> <img src='"+prddetail[i].product_img+"' alt='' name='prod_img' id='prod_img' height='300px' width='300px'></td>";
             pdt +="<td>"+prddetail[i].product_name+"</td>";
             pdt +="<td>"+prddetail[i].product_price+"</td>";
             pdt +="<td>"+prddetail[i].catogory_id+"</td>";
