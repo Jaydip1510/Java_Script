@@ -21,11 +21,27 @@ document.getElementById("btn").addEventListener("click",()=>{
     {
         category_data = JSON.parse(category_data);
     }
-    let imag  = document.product.pimg.value;
+    
     let pname = document.product.pname.value;
     let price = document.product.price.value;
     let catid = document.product.category.value;
     let proid = document.product.pid.value;
+    let imag  = document.getElementsByName("pimg[]");
+    if(imag.length > 0){
+        for(let n = 0;n<imag.length; n++)
+        {
+            console.log(imag[n].files[0]);
+            let ab = new FileReader();
+            ab.readAsDataURL(imag[n].files[0]);
+        
+            ab.addEventListener("loadend",(ev)=>{
+                localStorage.setItem("productDetail",ab.result);
+                console.log(ev);
+            });
+        } 
+        
+        
+     }
     let found = category_data.find(function (element) {
         return element.id == catid;
     });
@@ -90,7 +106,7 @@ function display(){
         for(let i = 0; i<prddetail.length;i++){
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
-            pdt +="<td>"+prddetail[i].product_img+"</td>";
+            pdt +="<td> <img src='' alt='' name='prod_img' id='prod_img' height='300px' width='300px'></td>";
             pdt +="<td>"+prddetail[i].product_name+"</td>";
             pdt +="<td>"+prddetail[i].product_price+"</td>";
             pdt +="<td>"+prddetail[i].catogory_id+"</td>";
