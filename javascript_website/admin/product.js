@@ -38,21 +38,6 @@ document.getElementById("btn").addEventListener("click",()=>{
     let proid = document.product.pid.value;
     
     
-
-
-    /*let imag  = document.getElementById("pimg");
-    if(imag.length > 0){
-        for(let n = 0;n<imag.length; n++)
-        {
-            // console.log(imag[n].files[0]);
-            let ab = new FileReader();
-            ab.readAsDataURL(imag[n].files[0]);        
-            ab.addEventListener("load",(ev)=>{
-                pdetail.product_img =  ab.result;
-            });
-        }     
-        
-     }*/
      
     let found = category_data.find(function (element) {
         return element.id == catid;
