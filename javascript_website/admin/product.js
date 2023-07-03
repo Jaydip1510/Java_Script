@@ -118,7 +118,6 @@ function edit_product(id)
            }  
   } 
 }
-
 function delete_product(id){
     let data = JSON.parse(localStorage.getItem("productDetail"));
     for (let i = 0; i < data.length; i++) {
