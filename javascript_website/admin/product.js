@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     {
         category_data = JSON.parse(category_data);
             category_data.forEach(element => {
+
                 cat_html+="<option value='"+element.id+"'>"+element.name+"</option>"
             });   
     }
