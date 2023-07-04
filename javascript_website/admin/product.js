@@ -155,8 +155,7 @@ function readFile(input)
         gd_image_data = e.target.result;
         div.innerHTML = `
             <img src="${e.target.result}" alt="${file.name}" width="150" height="150">
-        `;
-        
+        `;    
     }; 
     fileReader.onerror = function() {
       alert(fileReader.error);
