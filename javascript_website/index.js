@@ -55,43 +55,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
         }
     }
     document.getElementById('product_page').innerHTML = html;
-    /** Temp Logic Start
-    var Carditems = document.getElementsByClassName("card");
-    var final_array = [];
-    for (var i = 0; i < Carditems.length; i++) {
-       var prod =  {
-            "product_id": 1,
-            "catogory_id": 1,
-            "product_img": "http://google.com/image/img.jpg",
-            "product_name": "Keyboard",
-            "product_price": "1500"
-        };
-        var img_res = Carditems[i].getElementsByTagName('img')[0];
-        var ChildDiv = Carditems[i].getElementsByTagName('div')[0];
-        var firstParagraph = ChildDiv.getElementsByTagName('p')[0];
-        var span_tag = ChildDiv.getElementsByTagName('span')[0];
-       
-        
-        var pname = firstParagraph.textContent;
-        var price = span_tag.textContent;
-        var img_src = img_res.src;
-        prod.product_id = i + 1;
-        prod.product_img = img_src;
-        prod.product_name = pname;
-        prod.product_price = price;
-        
-        final_array.push(prod);
-
-    }
-    console.log(final_array);
-    /** Temp Logic End */
-
-    /* -- Not Required For New Logic -- 
-    var items = document.getElementsByClassName("add-to-cart");
-     for (var i = 0; i < items.length; i++) {
-         items[i].addEventListener('click', fun);
-     }
-     */
 });
 function cartTable() {
     var count = 0;
