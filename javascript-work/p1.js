@@ -1,25 +1,27 @@
 display();
 document.getElementById('btn1').addEventListener("click", () => {
     let name = document.userform.name.value;
+    console.log(name);
     let age = document.userform.age.value;
     let salary = document.userform.sal.value;
     let gen = document.userform.g1.value;
 
-    let d1 = {};
-    let abc = {
+    let jp = {};
+    let xyz = {
         name: name,
         age: age,
         salary: salary,
         gender: gen
     };
     
-    let uData = JSON.parse(localStorage.getItem("empDetail"));
-    if (uData != null) {
-        uData.push(abc);
-        localStorage.setItem("empDetail", JSON.stringify(uData));
+    let sData = JSON.parse(localStorage.getItem("empDetail"));
+    if (sData == null && sData.length >0) {
+        sData = [];
+        sData.push(xyz);
+        localStorage.setItem("empDetail", JSON.stringify(sData));
     } else {
-        d1 = [abc];
-        localStorage.setItem("empDetail", JSON.stringify(d1));
+        jp = [xyz];
+        localStorage.setItem("empDetail", JSON.stringify(sData));
     }
     document.userform.reset();
     display();
@@ -50,9 +52,4 @@ function display() {
     document.getElementById("userData").innerHTML = dt;
 }
 
-function delData(id){
-        let abc = JSON.parse(localStorage.getItem("empDetail"));
-        abc.splice(id,1);
-        localStorage.setItem("empDetail",JSON.stringify(abc));
-        display();
-}
+
