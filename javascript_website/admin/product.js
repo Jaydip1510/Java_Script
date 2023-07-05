@@ -143,6 +143,7 @@ function delete_product(id){
          data.splice(i,1);
         }
     }
+    
     localStorage.setItem("productDetail",JSON.stringify(data));
     display();   
 }
