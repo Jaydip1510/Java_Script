@@ -6,7 +6,7 @@ document.getElementById("btn").addEventListener("click", () => {
     let salary = document.frm.sal.value;
     let gen = document.frm.g1.value;
 
-    let u_data = {};
+    let u_data = [];
     let udata = {
         name: name,
         age: age,
@@ -14,10 +14,11 @@ document.getElementById("btn").addEventListener("click", () => {
         salary: salary,
         gender: gen
     };
-    let abcdata = JSON.parse(localStorage.getItem("studentInfo"));
+    let abcdata = localStorage.getItem("studentInfo");
     if (abcdata != null) {
+
         abcdata.push(udata);
-        localStorage.setItem("studentInfo", JSON.stringify(abcdata));
+        abcdata = JSON.parse(abcdata);
     } else {
         u_data = [udata];
         localStorage.setItem("stdentInfo", JSON.stringify(u_data));
@@ -38,7 +39,6 @@ function display(){
 
         let local = localStorage.getItem("studentInfo");
         if(local != null){
-            let abc = JSON.parse(local);
             for(let i = 0; i<abc.length;i++){
                 dt +="<tr>";
                 dt +="<td>"+abc[i].name+"</td>";
