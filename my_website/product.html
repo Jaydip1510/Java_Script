@@ -165,7 +165,25 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                Dashboard Page
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 col-8 align-self-center">
+                                        <h3 class="page-title mb-0 p-0">Table</h3>
+                                        <div class="d-flex align-items-center">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-4 align-self-center">
+                                        <div class="text-end upgrade-btn">
+                                            <a href="product_add.html" class="btn btn-success d-none d-md-inline-block text-white">Add product</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table user-table no-wrap" id="ptable">
+                                    </table>
+                                </div>
+                             
                             </div>
                         </div>
                     </div>
@@ -214,6 +232,12 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+    <script src="product.js"></script>
+    <script>
+        $(document).ready(function() {
+            display();
+        });
+    </script>
 </body>
 
 </html>
