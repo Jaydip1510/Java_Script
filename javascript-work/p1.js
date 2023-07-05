@@ -1,53 +1,58 @@
 display();
-document.getElementById("btn").addEventListener("click", () => {
-    let name = document.frm.uname.value;
-    let age = document.frm.age.value;
-    let add = document.frm.add.value;
-    let salary = document.frm.sal.value;
-    let gen = document.frm.g1.value;
+document.getElementById('btn1').addEventListener("click", () => {
+    let name = document.userform.name.value;
+    let age = document.userform.age.value;
+    let salary = document.userform.sal.value;
+    let gen = document.userform.g1.value;
 
-    let u_data = [];
-    let udata = {
+    let d1 = {};
+    let abc = {
         name: name,
         age: age,
-        add: add,
         salary: salary,
         gender: gen
     };
-    let abcdata = localStorage.getItem("studentInfo");
-    if (abcdata != null) {
-
-        abcdata.push(udata);
-        abcdata = JSON.parse(abcdata);
+    
+    let uData = JSON.parse(localStorage.getItem("empDetail"));
+    if (uData != null) {
+        uData.push(abc);
+        localStorage.setItem("empDetail", JSON.stringify(uData));
     } else {
-        u_data = [udata];
-        localStorage.setItem("stdentInfo", JSON.stringify(u_data));
+        d1 = [abc];
+        localStorage.setItem("empDetail", JSON.stringify(d1));
     }
-    document.frm.reset();
+    document.userform.reset();
     display();
 });
+function display() {
+  let dt = "<tr>";
+    dt += "<th><center>Name</center></th>";
+    dt += "<th><center>Age</center></th>";
+    dt += "<th><center>Salary</center></th>";
+    dt += "<th><center>Gender</center></th>";
+    dt += "<th><center>Action</center></th>";
+    dt += "</tr>";
+    let local = localStorage.getItem("empDetail");
+   
+    if (local != null) {
+       let abc = JSON.parse(local);    
+        for (let i = 0; i < abc.length; i++) {
+            dt += "<tr>";
+            dt += "<td><center>" + abc[i].name + "</center></td>";
+            dt += "<td><center>" + abc[i].age + "</center></td>";
+            dt += "<td><center>" + abc[i].salary + "</center></td>";
+            dt += "<td><center>" + abc[i].gender + "</center></td>";
+            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+i+")'</center></td>";
 
-function display(){
-    let dt = "<tr>";
-        dt +="<th>Name</th>";
-        dt +="<th>Age</th>";
-        dt +="<th>Address</th>";
-        dt +="<th>Salary</th>";
-        dt +="<th>Gender</th>";
-        dt +="<th>Action</th>";
-        dt +="</tr>";
-
-        let local = localStorage.getItem("studentInfo");
-        if(local != null){
-            for(let i = 0; i<abc.length;i++){
-                dt +="<tr>";
-                dt +="<td>"+abc[i].name+"</td>";
-                dt +="<td>"+abc[i].age+"</td>";
-                dt +="<td>"+abc[i].add+"</td>";
-                dt +="<td>"+abc[i].salary+"</td>";
-                dt +="<td>"+abc[i].gender+"</td>";
-                dt +="</tr>";
-            }
+            dt += "</tr>";
         }
-        document.getElementById("usertbl").innerHTML = dt ;
+    }
+    document.getElementById("userData").innerHTML = dt;
+}
+
+function delData(id){
+        let abc = JSON.parse(localStorage.getItem("empDetail"));
+        abc.splice(id,1);
+        localStorage.setItem("empDetail",JSON.stringify(abc));
+        display();
 }
