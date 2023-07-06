@@ -1,3 +1,4 @@
+display();
 document.getElementById('btn').addEventListener("click",()=>{
     let name = document.studform.sname.value;
     let age = document.studform.age.value;
@@ -25,8 +26,7 @@ document.getElementById('btn').addEventListener("click",()=>{
 
 });
 function display(){
-    let sd='';
-    sd +="<tr>";
+  let sd ="<tr>";
     sd +="<th>Name</th>";
     sd +="<th>Age</th>";
     sd +="<th>Salary</th>";
