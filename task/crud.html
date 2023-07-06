@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+</head>
+<body>
+    <form action="#" name="cform" id="cform">
+        <input type="hidden" name="id" id="id"><br>
+        <label for="">Name:</label>
+        <input type="text" name="name" id="name"><br><br>
+
+        <label for="">Age:</label>
+        <input type="text" name="age" id="age"><br><br>
+
+        <label for="">Salary</label>
+        <input type="text" name="salary" id="salary"><br><br>
+
+       <input type="button" name="save" id="save" value="Save"><br><br>
+
+       <table id="ctable" border="1">
+
+       </table>
+
+    </form>
+    <script>
+        display();
+        //insert
+        document.getElementById("save").addEventListener("click",()=>{
+            let name=document.cform.name.value;
+            let age=document.cform.age.value;
+            let salary=document.cform.salary.value;
+            let id=document.cform.id.value;
+
+
+            let data={};
+            let cdata={
+                name:name,
+                age:age,
+                salary:salary,
+                id:id
+
+            };
+
+            let cruddata=JSON.parse(localStorage.getItem("CrudDetail"));
+            if(cruddata != null){
+                if(id != ''){
+                //push data
+                cruddata.crudInfo.push(cdata);
+                localStorage.setItem("CrudDetail",JSON.stringify(cruddata));
+            }
+            }else{
+                //insert data
+                data.crudInfo=[cdata];
+                localStorage.setItem("CrudDetail",JSON.stringify(data));
+
+            }
+            document.cform.reset();
+            display();
+            
+        });
+
+        //display data
+        function display(){
+            let info=JSON.parse(localStorage.getItem("CrudDetail"));
+            if(info != null){
+            let tr='';
+            tr+="<tr>";
+            tr+="<td>Name</td>";    
+            tr+="<td>Age</td>";    
+            tr+="<td>Salary</td>"; 
+            tr+="<td>Action</td>";  
+            tr+="</tr>";
+
+            for(let i=0;i<info.crudInfo.length;i++){
+                tr+="<tr>";
+                tr+="<td>"+info.crudInfo[i].name+"</td>"; 
+                tr+="<td>"+info.crudInfo[i].age+"</td>"; 
+                tr+="<td>"+info.crudInfo[i].salary+"</td>"; 
+                tr+="<td><input type='button' name='editbtn' id='editbtn' value='Edit' onclick='editdata("+i+")'>"; 
+                tr+="<input type='button' name='delbtn' id='delbtn' value='Delete' onclick='deldata("+i+")'></td>"; 
+
+                tr+="</tr>";
+            }
+            document.getElementById("ctable").innerHTML=tr;
+
+            }
+            
+        }
+
+        //delete data
+        function deldata(id){
+            let info=JSON.parse(localStorage.getItem("CrudDetail"));
+            info.crudInfo.splice(id,1);
+            localStorage.setItem("CrudDetail",JSON.stringify(info));
+            display();
+
+        }
+    </script>
+</body>
+</html>
