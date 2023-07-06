@@ -34,6 +34,7 @@ function display() {
         sd += "<th>Age</th>";
         sd += "<th>Salary</th>";
         sd += "<th>Gender</th>";
+        sd +="<th>Action</th>";
         sd += "</tr>";
 
         for (let i = 0; i < std.studInfo.length; i++) {
@@ -42,8 +43,17 @@ function display() {
             sd += "<td>" + std.studInfo[i].age + "</td>";
             sd += "<td>" + std.studInfo[i].salary + "</td>";
             sd += "<td>" + std.studInfo[i].gender + "</td>";
+            sd += "<td><input type='button' name='delstud' id='delstud' value='Delete' onclick='delstud("+i+")'>";
             sd += "</tr>";
         }
     }
     document.getElementById("studtable").innerHTML = sd;
+}
+function delstud(id){
+    let abc = JSON.parse(localStorage.getItem("studentInfo"));
+    if(abc != null){
+        abc.studInfo.splice(id,1);
+        localStorage.setItem("studentInfo",JSON.stringify(abc));
+        display();
+    }
 }
