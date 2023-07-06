@@ -33,3 +33,25 @@ $(function() {
     $(window).on("resize", setsidebartype);
 
 });
+
+function getQueryString(field, url) {
+    var href = url ? url : window.location.href;
+    var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+    var string = reg.exec(href);
+    return string ? string[1] : null;
+}
+function getQueryParams(url) {
+    const paramArr = url.slice(url.indexOf('?') + 1).split('&');
+    const params = {};
+    paramArr.map(param => {
+        const [key, val] = param.split('=');
+        params[key] = decodeURIComponent(val);
+    })
+    return params;
+}
+
+window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+       $(this).remove(); 
+    });
+}, 4000);

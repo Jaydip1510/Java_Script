@@ -262,6 +262,11 @@
     <script>
         $(document).ready(function() {
             category_list_option();
+            var queryString = getQueryString("pid");
+            //console.log(queryString);
+            if(queryString !=null){
+                edit_product(queryString);
+            }
         });
     </script>
 </body>

@@ -16,7 +16,7 @@ function category_list_option(){
 }
 
 function add_product(){
-
+    var msg = '';
     let pdetail = {
         "product_id" : 0,
         "catogory_id": "",
@@ -60,8 +60,10 @@ function add_product(){
                 data[i].product_price   = price;
                 data[i].catogory_id     = catid;
                 data[i].catogory_name   = catname;
+                msg = `Product id#${proid} Updated Successfully.`;
               }
             }
+            
         }else{
             pdetail.product_id = 1;
             let len = data.length;
@@ -69,6 +71,7 @@ function add_product(){
             {
                 pdetail.product_id =  len + 1;
             }
+            msg = `Product id#${pdetail.product_id} Added Successfully.`;
             data.push(pdetail);
         }
         localStorage.setItem("productDetail",JSON.stringify(data));
@@ -80,8 +83,7 @@ function add_product(){
     document.product.reset();
     document.getElementById('image-preview').innerHTML = '';
     document.product.pid.value = '';
-
-    
+    window.location.href="product.html?msg="+msg;
 
 }
 
@@ -104,6 +106,10 @@ function display(){
         let prddetail = JSON.parse(prd);
          pdt +="<tbody>";
         for(let i = 0; i<prddetail.length;i++){
+
+            //<a href="">Edit</>
+            let action_edit = "<a href = 'product_add.html?pid="+prddetail[i].product_id+"&catid="+prddetail[i].catogory_id+"' class=\"btn btn-success text-white\">Edit</a>";
+            let action_delete = "<input type='button' name='prddel' id='prddel' class=\"btn btn-danger text-white\" value='Delete' onclick='delete_product(" + prddetail[i].product_id + ")'>";
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
             pdt +="<td> <img src='"+prddetail[i].product_img+"' alt='' name='prod_img' id='prod_img' height='110px' width='110px'></td>";
@@ -111,8 +117,9 @@ function display(){
             pdt +="<td>"+prddetail[i].product_price+"</td>";
             pdt +="<td>"+prddetail[i].catogory_id+"</td>";
             pdt +="<td>"+prddetail[i].catogory_name+"</td>";
-            pdt += "<td><center><input type='button' name='prddel' id='prddel' value='Delete' onclick='delete_product(" + prddetail[i].product_id + ")'>";
-            pdt += "   <input type='button' name='prdedit' id='prdedit' value='Edit' onclick='edit_product(" + prddetail[i].product_id + ")'></td>";
+            pdt += "";
+            pdt += "<td>"+action_edit;
+            pdt +="&nbsp;&nbsp;&nbsp;&nbsp;"+action_delete+"</td>";
             pdt +="</tr>";
             pdt +="<tbody>";
         }

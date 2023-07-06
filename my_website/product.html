@@ -165,6 +165,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
+                                <div  id="message_text">
+                                    
+                                  </div>
+
                                 <div class="row align-items-center">
                                     <div class="col-md-6 col-8 align-self-center">
                                         <h3 class="page-title mb-0 p-0">Table</h3>
@@ -188,6 +192,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -235,6 +240,15 @@
     <script src="product.js"></script>
     <script>
         $(document).ready(function() {
+            var q_msg = getQueryParams(window.location.href);
+            if(q_msg.msg)
+            {
+                var msg_ele = document.getElementById("message_text");
+                msg_ele.innerHTML = q_msg.msg;
+                msg_ele.setAttribute("class", "alert alert-success");
+                msg_ele.setAttribute("role", "alert");
+            }
+           
             display();
         });
     </script>
