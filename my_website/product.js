@@ -86,7 +86,8 @@ function add_product(){
 }
 
 function display(){
-      let pdt = "<tr>";
+    let pdt = "<thead>";
+      pdt += "<tr>";
       pdt +="<th>Id</th>";
       pdt +="<th width='10%'>Image</th>";
       pdt +="<th>Product Name</th>";
@@ -95,12 +96,13 @@ function display(){
       pdt +="<th>Catogory Name</th>";
       pdt +="<th>Action</th>";
       pdt +="</tr>";
+      pdt += "<thead>";
 
       let prd = localStorage.getItem("productDetail");
 
       if(prd != null && prd.length > 0 ){
         let prddetail = JSON.parse(prd);
-        console.log(prddetail);
+         pdt +="<tbody>";
         for(let i = 0; i<prddetail.length;i++){
             pdt +="<tr>";
             pdt +="<td>"+prddetail[i].product_id+"</td>";
@@ -112,6 +114,7 @@ function display(){
             pdt += "<td><center><input type='button' name='prddel' id='prddel' value='Delete' onclick='delete_product(" + prddetail[i].product_id + ")'>";
             pdt += "   <input type='button' name='prdedit' id='prdedit' value='Edit' onclick='edit_product(" + prddetail[i].product_id + ")'></td>";
             pdt +="</tr>";
+            pdt +="<tbody>";
         }
       }
       document.getElementById("ptable").innerHTML = pdt;

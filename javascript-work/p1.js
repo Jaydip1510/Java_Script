@@ -45,7 +45,6 @@ function display() {
             dt += "<td><center>" + abc[i].salary + "</center></td>";
             dt += "<td><center>" + abc[i].gender + "</center></td>";
             dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData("+i+")'</center></td>";
-
             dt += "</tr>";
         }
     }
