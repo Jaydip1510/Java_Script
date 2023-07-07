@@ -22,6 +22,7 @@ document.getElementById('add').addEventListener("click",()=>{
         localStorage.setItem("localData",JSON.stringify(jp));
     }else{
          rv = {
+            id:1,
             name:name,
             age:age,
             salary:sal,
