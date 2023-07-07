@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>carDetail</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        label{
+            width: 100px;
+        }
+        .btn{
+            width: 90px;
+            height: 40px;
+        }
+    </style>
 </head>
+
 <body>
-    <form action="#" name="cardata">
-         <input type="hidden" name="cid" id="cid">
-        <label for="">Carprice</label>
-        <input type="text" name="carprice" id="carprice"><br><br>
+    <div class="container-fliud">
+        <div class="row">
+            <div class="col-4 bg-secondary p-5">
+                <form action="#" name="cardata">
+                    <input type="hidden" name="cid" id="cid">
+                    <label for=""><b>Carprice:-</b></label>
+                    <input type="text" name="carprice" id="carprice"><br><br>
 
-        <label for="">Carbrand</label>
-        <input type="text" name="carbrand" id="carbrand"><br><br>
+                    <label for=""><b>Carbrand:-</b></label>
+                    <input type="text" name="carbrand" id="carbrand"><br><br>
 
-        <label for="">CarName</label>
-        <input type="text" name="carname" id="carname"><br><br>
+                    <label for=""><b>CarName:-</b></label>
+                    <input type="text" name="carname" id="carname"><br><br>
 
-        <label for="">Cartype</label>
-        <input type="radio" name="g1" id="g1" value="5seater">5 Seater
-        <input type="radio" name="g1" id="g1" value="7seater">7 Seater<br><br>
+                    <label for=""><b>Cartype:-</b></label>
+                    <input type="radio" name="g1" id="g1" value="5seater">5 Seater
+                    <input type="radio" name="g1" id="g1" value="7seater">7 Seater<br><br>
 
-        <label for="">CarCompany</label>
-        <input type="checkbox" name="c1" value="renault kwid">Renault kwid 
-        <input type="checkbox" name="c1" value="maruti grand">Maruti grand
-        <input type="checkbox" name="c1" value="vitara">vitara
-        <input type="checkbox" name="c1" value="baleno">baleno<br><br>
+                    <label for=""><b>CarCompany:-</b></label><br>
+                    <input type="checkbox" name="c1" value="renault kwid">Renault kwid<br>
+                    <input type="checkbox" name="c1" value="maruti grand">Maruti grand<br>
+                    <input type="checkbox" name="c1" value="vitara">vitara<br>
+                    <input type="checkbox" name="c1" value="baleno">baleno<br><br>
 
-        <input type="button" value="Save" name="car" id="car"><br><br>
-    </form>
-    <table border="1" id="cartable">
-
-    </table>
+                    <input type="button" value="Save" class='btn btn-success' name="car" id="car"><br><br>
+                </form>
+            </div>
+            <div class="col-8 bg-warning p-5 d-flex justify-content-center align-items-start padding-top">
+                <table border="1" class="table table-striped" id="cartable"> </table>
+            </div>
+        </div>
+    </div>
     <script src="jaydip.js"></script>
-    </body>
+</body>

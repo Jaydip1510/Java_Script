@@ -65,25 +65,25 @@ function disp(){
 
       if(abc != null){
         dt +="<tr>";
-         dt +="<th>CarId</th>";
-        dt +="<th>Carprice</th>";
-        dt +="<th>Carbrand</th>";
-        dt +="<th>Carname</th>";
-        dt +="<th>Cartype</th>";
-        dt +="<th>Carcompany</th>";
-        dt +="<th>Action</th>";
+         dt +="<th><center>CarId</center</th>";
+        dt +="<th><center>Carprice</center></th>";
+        dt +="<th><center>Carbrand</center></th>";
+        dt +="<th><center>Carname</center></th>";
+        dt +="<th><center>Cartype</center></th>";
+        dt +="<th><center>Carcompany</center></th>";
+        dt +="<th><center>Action</center></th>";
         dt +="</tr>";
 
         for(let i = 0 ; i<abc.inform.length;i++){
             dt +="<tr>";
-            dt += "<td>" + abc.inform[i].carid + "</td>";
-            dt +="<td>"+abc.inform[i].carprice+"</td>";
-            dt += "<td>" + abc.inform[i].carbrand + "</td>";
-            dt += "<td>" + abc.inform[i].carname + "</td>";
-            dt += "<td>" + abc.inform[i].cartype + "</td>";
-            dt += "<td>" + abc.inform[i].carcom + "</td>";
-            dt +="<td><input type='button' name='delcar' id='delcar' value='Delete' onclick='delcar("+i+")'>";
-            dt +="<input type='button' name='editcar' id='editcar' value='Edit' onclick='editcar("+i+")'></td>";
+            dt += "<td><center>" + abc.inform[i].carid + "</center></td>";
+            dt +="<td><center>"+abc.inform[i].carprice+"</center></td>";
+            dt += "<td><center>" + abc.inform[i].carbrand + "</center></td>";
+            dt += "<td><center>" + abc.inform[i].carname + "</center></td>";
+            dt += "<td><center>" + abc.inform[i].cartype + "</center></td>";
+            dt += "<td><center>" + abc.inform[i].carcom + "</center></td>";
+            dt +="<td><center><input type='button' name='editcar' id='editcar' class='btn btn-primary' value='Edit' onclick='editcar("+i+")'>";
+            dt +="&nbsp;&nbsp;<input type='button' name='delcar' class='btn btn-danger' id='delcar' value='Delete' onclick='delcar("+i+")'></center></td>";
             dt +="</tr>";
         }
       }
