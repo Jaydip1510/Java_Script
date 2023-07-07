@@ -17,17 +17,11 @@ document.getElementById('add').addEventListener("click",()=>{
 
     let jp = JSON.parse(localStorage.getItem("localData"));
     if(jp !=null){
-        
+    
         jp.inform.push(rv);
         localStorage.setItem("localData",JSON.stringify(jp));
     }else{
-         rv = {
-            id:1,
-            name:name,
-            age:age,
-            salary:sal,
-            gender:gen
-        }
+         
         rv.id+1;
         rj.inform = [rv];
         localStorage.setItem("localData",JSON.stringify(rj));
