@@ -38,7 +38,7 @@
         localStorage.setItem("categoryData", JSON.stringify(data));
     }
     document.catform.reset();
-    
+
    // display();
     }
 //});
