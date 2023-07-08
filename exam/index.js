@@ -48,24 +48,24 @@ function display(){
             let dt = '';
             if(rv != null){
                 dt += "<tr>";
-                dt +="<th>CarId</th>";
-                dt +="<th>Carprice</th>";
-                dt +="<th>Carname</th>";
-                dt +="<th>Carbrand</th>";
-                dt +="<th>Cartype</th>";
-                dt +="<th>Carcompany</th>";
-                dt +="<th>Action</th>";
+                dt +="<th><center><b>CarId</center></b></th>";
+                dt +="<th><center><b>Carprice</center></b></th>";
+                dt +="<th><center><b>Carname</center></b></th>";
+                dt +="<th><center><b>Carbrand</center></b></th>";
+                dt +="<th><center><b>Cartype</center></b></th>";
+                dt +="<th><center><b>Carcompany</center></b></th>";
+                dt +="<th><center><b>Action</center></b></th>";
                 dt += "</tr>";
 
                 for(let i = 0;i<rv.cardata.length;i++){
                     dt +="<tr>";
-                    dt +="<td>"+rv.cardata[i].carid+"</td>";
-                    dt +="<td>"+rv.cardata[i].carprice+"</td>";
-                    dt +="<td>"+rv.cardata[i].carname+"</td>";
-                    dt +="<td>"+rv.cardata[i].carbrand+"</td>";
-                    dt +="<td>"+rv.cardata[i].cartype+"</td>";
-                    dt +="<td>"+rv.cardata[i].carcompany+"</td>";
-                    dt +="<td><input type='button' name='deldata' id='deldata' value='Delete' onclick='deldata("+i+")'></td>";
+                    dt +="<td><center>"+rv.cardata[i].carid+"</center></td>";
+                    dt +="<td><center>"+rv.cardata[i].carprice+"</center></td>";
+                    dt +="<td><center>"+rv.cardata[i].carname+"</center></td>";
+                    dt +="<td><center>"+rv.cardata[i].carbrand+"</center></td>";
+                    dt +="<td><center>"+rv.cardata[i].cartype+"</center></td>";
+                    dt +="<td><center>"+rv.cardata[i].carcompany+"</center></td>";
+                    dt +="<td><center><input type='button' name='deldata' class='btn btn-danger' id='deldata' value='Delete' onclick='deldata("+i+")'></center></td>";
 
                     dt +="</tr>";
                 }
