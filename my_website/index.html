@@ -55,14 +55,14 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> -->
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/Flipkart.png" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -79,7 +79,7 @@
                 <!-- End Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    
+
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
                     <!-- ============================================================== -->
@@ -89,7 +89,7 @@
                         <!-- ============================================================== -->
 
                         <li class="nav-item hidden-sm-down">
-                            
+
                         </li>
                     </ul>
 
@@ -101,7 +101,8 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown"
+                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="assets/images/users/1.jpg" alt="user" class="profile-pic me-2">Markarn Doe
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
@@ -126,14 +127,14 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="index.html" aria-expanded="false"><i class="me-3 far fa-clock fa-fw"
                                     aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a></li>
-                       
+
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="category.html" aria-expanded="false"><i class="me-3 fa fa-table"
                                     aria-hidden="true"></i><span class="hide-menu">Category</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="product.html" aria-expanded="false"><i class="me-3 fa fa-font"
                                     aria-hidden="true"></i><span class="hide-menu">Product</span></a></li>
-                          
+
                     </ul>
 
                 </nav>
@@ -151,7 +152,7 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            
+
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -169,20 +170,24 @@
                                 Dashboard Page
                                 <div class="row">
                                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                                        <div class="card blue">
-                                            <div class="title">all projects</div>
-                                            <i class="zmdi zmdi-upload"></i>
-                                            <div class="value">89</div>
-                                            <div class="stat"><b>13</b>% increase</div>
-                                        </div>
+                                        <a href="product.html" title="Products">
+                                            <div class="card blue">
+                                                <div class="title">Total products</div>
+                                                <i class="zmdi zmdi-upload"></i>
+                                                <div class="value" id="tot_prod_cnt">0</div>
+                                                <div class="stat"></div>
+                                            </div>
+                                        </a>
                                     </div>
                                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                                        <div class="card green">
-                                            <div class="title">team members</div>
-                                            <i class="zmdi zmdi-upload"></i>
-                                            <div class="value">5,990</div>
-                                            <div class="stat"><b>4</b>% increase</div>
-                                        </div>
+                                        <a href="category.html" title="Category">
+                                            <div class="card green">
+                                                <div class="title">Total Category</div>
+                                                <i class="zmdi zmdi-upload"></i>
+                                                <div class="value" id="tot_cat_cnt">0</div>
+                                                <div class="stat"></div>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
@@ -234,6 +239,11 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function(){
+            getSatusCount();
+        });
+    </script>
 </body>
 
 </html>

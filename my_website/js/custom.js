@@ -1,13 +1,13 @@
-$(function() {
+$(function () {
     "use strict";
 
     $(".preloader").fadeOut();
     // this is for close icon when navigation open in mobile view
-    $(".nav-toggler").on('click', function() {
+    $(".nav-toggler").on('click', function () {
         $("#main-wrapper").toggleClass("show-sidebar");
         $(".nav-toggler i").toggleClass("ti-menu");
     });
-    $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
+    $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
         $(".app-search").toggle(200);
         $(".app-search input").focus();
     });
@@ -17,11 +17,11 @@ $(function() {
     // ============================================================== 
     $("body, .page-wrapper").trigger("resize");
     $(".page-wrapper").delay(20).show();
-    
+
     //****************************
     /* This is for the mini-sidebar if width is less then 1170*/
     //**************************** 
-    var setsidebartype = function() {
+    var setsidebartype = function () {
         var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
         if (width < 1170) {
             $("#main-wrapper").attr("data-sidebartype", "mini-sidebar");
@@ -49,9 +49,24 @@ function getQueryParams(url) {
     })
     return params;
 }
+function getSatusCount() {
+    var tot_prod_cnt = 0;
+    var tot_cat_cnt = 0;
+    let prd = localStorage.getItem("productDetail");
+    let cat = localStorage.getItem("categoryData");
+  
+    prd  = prd != null ? JSON.parse(prd) : 0;
+    cat  = cat != null ? JSON.parse(cat) : 0;
+    
+    tot_prod_cnt = prd != 0 ? prd.length : 0;
+    tot_cat_cnt  = cat != 0 ? cat.length : 0;
+   
+    document.getElementById("tot_prod_cnt").innerHTML = tot_prod_cnt;
+    document.getElementById("tot_cat_cnt").innerHTML = tot_cat_cnt;
 
-window.setTimeout(function() {
-    $(".alert").fadeTo(500, 0).slideUp(500, function(){
-       $(this).remove(); 
+}
+window.setTimeout(function () {
+    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+        $(this).remove();
     });
 }, 4000);

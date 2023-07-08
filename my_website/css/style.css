@@ -639,7 +639,10 @@ fieldset {
   padding: 0;
   margin: 0;
   border: 0; }
-
+.dark-logo{
+    height: 100px;
+    width: 200px;
+}
 legend {
   display: block;
   width: 100%;
