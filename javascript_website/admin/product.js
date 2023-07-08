@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 document.getElementById("btn").addEventListener("click",()=>{
 
     let pdetail = {
-        "product_id" : 0,
+        "product_id" : 1,
         "catogory_id": "",
         "catogory_name": "",
         "product_img": "",
