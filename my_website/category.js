@@ -37,9 +37,13 @@
         
         localStorage.setItem("categoryData", JSON.stringify(data));
     }
-    document.catform.reset();
-
+    window.location.href = "category.html";
+    return false;
+    //document.catform.reset();
+    //var meta = document.createElement('<meta http-equiv = "refresh" content = "2; url = https://www.tutorialspoint.com" />');
+     //document.getElementsByName("head")[0].appendChild(meta);
    // display();
+
     }
 //});
 function display() {
