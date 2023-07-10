@@ -37,8 +37,6 @@ document.getElementById("btn").addEventListener("click",()=>{
     let price = document.product.price.value;
     let catid = document.product.category.value;
     let proid = document.product.pid.value;
-    
-    
      
     let found = category_data.find(function (element) {
         return element.id == catid;
