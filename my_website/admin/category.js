@@ -2,6 +2,7 @@
 // Insert category
 //document.getElementById("catdata").addEventListener("click", () => {
     function add_category(){
+    var msg = '';
     let cat = document.catform.catname.value;
     let uid = document.catform.uid.value;
     let getdata = localStorage.getItem("categoryData");
@@ -17,6 +18,7 @@
             for(let i=0; i<getdata.length;i++){
                 if(uid == getdata[i].id){
                     getdata[i].name = cat;
+                    msg = `Category id#${uid} Updated Successfully.`;
                 }
             }
 
@@ -28,16 +30,16 @@
                 id: len + 1,
                 name: cat
             }
+            msg = `Category id #${dt.id} Added Successfully.`;
             getdata.push(dt);
    
         }
         localStorage.setItem("categoryData", JSON.stringify(getdata));
     } else {
         data = [dt];
-        
         localStorage.setItem("categoryData", JSON.stringify(data));
     }
-    window.location.href = "category.html";
+    window.location.href = "category.html?msg="+msg;
     return false;
     //document.catform.reset();
     //var meta = document.createElement('<meta http-equiv = "refresh" content = "2; url = https://www.tutorialspoint.com" />');
