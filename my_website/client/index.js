@@ -1,6 +1,15 @@
 var cartArray = [];
 const gc_local_storage = 'CartDetail';
 window.addEventListener("DOMContentLoaded", (event) => {
+    /* 
+    fetch("./product.json")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        
+    });
+    */
     var queryString = getQueryString("cat_id");
     let data = JSON.parse(localStorage.getItem("productDetail"));
 
@@ -33,7 +42,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         html += '<span class="rupee-icon">₹</span>';
         html += '<span class="product-price">' + data[i].product_price + '</sapn>';
         html += '</div>';
-        html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Cart</button>';
+        html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Card</button>';
         html += '</div>';
         html += '</div>';
         html += '</div>';
@@ -105,42 +114,30 @@ function cartTable() {
 }
 function add_to_cart(btn) {
     var cartObj = { "pname": "", "price": "", "qty": 1, "img": "" };
-    let parentDiv     = btn.parentNode; // Parent Node Of the Button 
-    let per_parentDiv = parentDiv.parentNode; // Pre - Parent Node of the above parent Node
+    let parentDiv = btn.parentNode;
+    let per_parentDiv = parentDiv.parentNode;
 
-    var img_res         = per_parentDiv.getElementsByTagName('img')[0]; // Read first image tag
-    var prod_name_div   = per_parentDiv.getElementsByClassName('product-name')[0]; // Read Class product name
-    var prod_price_span = per_parentDiv.getElementsByClassName('product-price')[0]; // Read Class product-price
+    var img_res = per_parentDiv.getElementsByTagName('img')[0];
+    var prod_name_div = per_parentDiv.getElementsByClassName('product-name')[0];
+    var prod_price_span = per_parentDiv.getElementsByClassName('product-price')[0];
 
-    var pname = prod_name_div.textContent; // textContent used to read text of the <div> tag
-    var price = prod_price_span.textContent; // textContent used to read text of the <div> tag
-    var img_src = img_res.src; // Image Src read from the variable img_res
-    /** Begin of assign value to cartObj */
+    var pname = prod_name_div.textContent;
+    var price = prod_price_span.textContent;
+    var img_src = img_res.src;
     cartObj.pname = pname;
     cartObj.price = price;
-    cartObj.img   = img_src;
-    //cartObj.qty   = is assign dynamically based on the value 
-     /** End of assign value to cartObj */
-     
-     //Check if cartArray lenght is greater then zero
-     // Case 1. Check if product does not exist in the cart then simply push to the cartArray.
-     // Case 2. If product already exist in the cart update quantity by one.
+    cartObj.img = img_src;
     if (cartArray.length > 0) {
-
-        var foundValue = cartArray.findIndex(item => item.pname === pname); // to find the index of product name match
-        /** Scenario where product not exist in the Cart */
+        var foundValue = cartArray.findIndex(item => item.pname === pname);
         if (foundValue === -1) {
             cartArray.push(cartObj);
 
         } else {
-            /** Product already exist in the cart so only quantity update */
             cartArray[foundValue].qty += 1;
         }
     } else {
-        // As we don't have anything in the cart just push data to cartArray
         cartArray.push(cartObj);
     }
-    // to Build html of the cart table
     cartTable();
 }
 function delData(del_idx) {

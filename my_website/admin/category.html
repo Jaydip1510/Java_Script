@@ -54,14 +54,14 @@
                         <b class="logo-icon">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" /> -->
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="assets/images/Flipkart.png" alt="homepage" class="dark-logo" />
 
                         </span>
                     </a>
@@ -102,7 +102,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="assets/images/jaydip.jpg" alt="user" class="profile-pic me-2">Markarn Doe
+                                <img src="assets/images/jaydip.jpg" alt="user" class="profile-pic me-2">Jaydip makwana
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>
@@ -151,21 +151,7 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-            <div class="row align-items-center">
-                <div class="col-md-6 col-8 align-self-center">
-                    <h3 class="page-title mb-0 p-0">Product Add</h3>
-                    <div class="d-flex align-items-center">
-                        
-                    </div>
-                </div>
-                <div class="col-md-6 col-4 align-self-center">
-                    <div class="text-end upgrade-btn">
-                        <a href="product.html" class="btn btn-success d-none d-md-inline-block text-white">Product List</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -180,37 +166,24 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                
-                                <form name="product" id="product" class="form-horizontal form-material mx-2" enctype="multipart/form-data">
-                                    <input type="hidden" name="pid" id="pid">
-                                    <div class="form-group">
-                                    <label class="col-md-12 mb-0">Product Image</label>
-                                    <div class="col-md-12">
-                                    <input type="file" name="pimg" id="pimg" class="form-control ps-0 form-control-line" accept=".jpg,.jpeg,.png,.gif" onchange="readFile(this)">
-            
-                                    <div id="image-preview"></div>
-                                   </div>
-
-                                    <br><br>
-                                    <label class="col-md-12 mb-0">Produt Name</label>
-                                    <div class="col-md-12">
-                                    <input type="text" name="pname" class="form-control ps-0 form-control-line" id="pname"><br><br>
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 col-8 align-self-center">
+                                        <h3 class="page-title mb-0 p-0">Table</h3>
+                                        <div class="d-flex align-items-center">
+                                            
+                                        </div>
                                     </div>
-                                    <label class="col-md-12 mb-0" >Product price</label>
-                                    <div class="col-md-12">
-                                    <input type="text" name="price" class="form-control ps-0 form-control-line" id="price"><br><br>
-                                   </div>
-                                    <label class="col-md-12 mb-0">Category</label>
-                                    <div class="col-md-12">
-                                    <select id="category" class="form-control ps-0 form-control-line" name="cat_id">            
-                                    </select>
+                                    <div class="col-md-6 col-4 align-self-center">
+                                        <div class="text-end upgrade-btn">
+                                            <a href="category_add.html" class="btn btn-success d-none d-md-inline-block text-white">Add Category</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                    <div class="form-group">
-                                    
-                                    <input type="button" name="btn" id="btn" class="btn btn-success d-none d-md-inline-block text-white" onclick="add_product()" value="Submit">
-                                    <a href="product.html" class="btn btn-success text-white">Cancle</a>
-                                </form>
-                            
+
+                                <div class="table-responsive">
+                                    <table class="table user-table no-wrap" id="tbl">
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -259,18 +232,14 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
-    <!--Category JavaScript -->
-    <script src="product.js"></script>
+     <!--Category JavaScript -->
+    <script src="category.js"></script>
     <script>
         $(document).ready(function() {
-            category_list_option();
-            var queryString = getQueryString("pid");
-            //console.log(queryString);
-            if(queryString !=null){
-                edit_product(queryString);
-            }
+            display();
         });
     </script>
+   
 </body>
 
 </html>
