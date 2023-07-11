@@ -95,7 +95,7 @@ function display(){
       pdt +="<th width='10%'>Image</th>";
       pdt +="<th>Product Name</th>";
       pdt +="<th>Price</th>";
-      //pdt +="<th>Catogery Id</th>";
+      pdt +="<th>Catogery Id</th>";
       pdt +="<th>Catogory Name</th>";
       pdt +="<th>Action</th>";
       pdt +="</tr>";
@@ -116,7 +116,7 @@ function display(){
             pdt +="<td> <img src='"+prddetail[i].product_img+"' alt='' name='prod_img' id='prod_img' height='110px' width='110px'></td>";
             pdt +="<td>"+prddetail[i].product_name+"</td>";
             pdt +="<td>"+prddetail[i].product_price+"</td>";
-           // pdt +="<td>"+prddetail[i].catogory_id+"</td>";
+            pdt +="<td>"+prddetail[i].catogory_id+"</td>";
             pdt +="<td>"+prddetail[i].catogory_name+"</td>";
             pdt += "";
             pdt += "<td>"+action_edit;
