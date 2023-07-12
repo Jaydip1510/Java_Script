@@ -95,7 +95,7 @@ function cartTable() {
         html += "<td>" + cartArray[i].price + "</td>";
         html += "<td>" + cartArray[i].qty + "</td>";
         html += "<td>" + subtot + "</td>";
-        html += "<td><input type='button' name='del' id='del' value='Delete' onclick= 'delData(" + i + ")'>";
+        html += "<td><input type='button' name='del' id='del' class='btn btn-primary' value='Delete' onclick= 'delData(" + i + ")'>";
         html += "</tr>";
         tot_price = tot_price + subtot;
     }
