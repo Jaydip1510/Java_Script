@@ -152,6 +152,11 @@ function delete_product(id){
     for (let i = 0; i < data.length; i++) {
         if(id == data[i].product_id){
          data.splice(i,1);
+        // let j = 1;
+        // for (let i = 0; i < data.length; i++) {
+        //     data[i].id = j;
+        //     j++;
+        // }
         }
     }
     
