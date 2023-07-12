@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
         html += '<span class="rupee-icon">₹</span>';
         html += '<span class="product-price">' + data[i].product_price + '</sapn>';
         html += '</div>';
-        html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Card</button>';
+        html += '<button class="btn btn-primary add-to-cart" onClick="add_to_cart(this)">Add To Cart</button>';
         html += '</div>';
         html += '</div>';
         html += '</div>';
