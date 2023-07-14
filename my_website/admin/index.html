@@ -100,15 +100,15 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
-                   
+
                         <li class="nav-item dropdown">
-                            
+
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="assets/images/jaydip.jpg" alt="user" class="profile-pic me-2">Jaydip makwana
-                                
+
                             </a>
-                            <button name="logout" id="logout" class="btn btn-primary" onclick="add()">Logout</button>
+                            <button name="logout" id="logout" class="btn btn-primary" onclick="logout()">Logout</button>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>
                     </ul>
@@ -244,10 +244,18 @@
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
+            let ls_login_detail = localStorage.getItem("loginDetail");
+            ls_login_detail = ls_login_detail != null ? JSON.parse(ls_login_detail) : 0;
+            if (ls_login_detail != 0) {
+                if(ls_login_detail.is_login == false)
+                {
+                    window.location.href="login.html"; 
+                }
+            }
             getSatusCount();
         });
-        
+
     </script>
 </body>
 

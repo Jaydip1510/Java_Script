@@ -1,22 +1,25 @@
-document.getElementById('btn').addEventListener("click",()=>{
+document.getElementById('btn').addEventListener("click", () => {
    let email = document.login.email.value;
    let pwd = document.login.pwd.value;
-   let cpwd = document.login.cpwd.value;
-
-   let d1 = {};
-   let logindata = {
-      email:email,
-      password:pwd,
-      compassword:cpwd
-   };
-   let jay = JSON.parse(localStorage.getItem("loginDetail"));
-   if(jay != null){
-      jay.inform.push(logindata);
-      localStorage.setItem("loginDetail",JSON.stringify(jay));
-   }else{
-      d1.inform = [logindata];
-      localStorage.setItem("loginDetail",JSON.stringify(d1));
+   let ls_login_detail = localStorage.getItem("loginDetail");
+   ls_login_detail = ls_login_detail != null ? JSON.parse(ls_login_detail) : 0;
+  
+   if (ls_login_detail != 0) {
+      console.log(ls_login_detail);
+      if (email == ls_login_detail.email  && pwd == ls_login_detail.password) {
+         ls_login_detail.is_login = true;
+         localStorage.setItem("loginDetail", JSON.stringify(ls_login_detail));
+         window.location.href="index.html"; 
+      } else {
+         alert("invalid login detail");
+      }
    }
    document.login.reset();
 });
 
+function getQueryString(field, url) {
+   var href = url ? url : window.location.href;
+   var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+   var string = reg.exec(href);
+   return string ? string[1] : null;
+}

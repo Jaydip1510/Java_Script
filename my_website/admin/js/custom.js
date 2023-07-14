@@ -71,6 +71,13 @@ window.setTimeout(function () {
     });
 }, 4000);
 
-function add(){
-    window.location.href="login.html";  
+function logout(){
+    let ls_login_detail = localStorage.getItem("loginDetail");
+    ls_login_detail  = ls_login_detail != null ? JSON.parse(ls_login_detail) : 0;
+    if(ls_login_detail != 0)
+    {
+        ls_login_detail.is_login = false;
+        localStorage.setItem("loginDetail",JSON.stringify(ls_login_detail));
+    }
+    window.location.href="login.html"; 
 }

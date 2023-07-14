@@ -31,10 +31,7 @@
                     <label for="">Password:-</label>
                     <input type="password"  class="form-control" name="pwd" id="pwd">
                     <br><br>
-            
-                    <label for="">Confirm Password:-</label>
-                    <input type="password" class="form-control" name="cpwd" id="cpwd">
-                    <br><br>
+
             
                     <input type="button" class="btn btn-primary" value="Login" id="btn" name="btn">
                 </form>
@@ -42,7 +39,18 @@
           </div>
         </div>
       </div>
-    
+      <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
     <script src="login.js"></script>
+    <script>
+      $(document).ready(function() {
+        var queryString = getQueryString("create");
+            //console.log(queryString);
+            if(queryString == 'true'){
+              localStorage.removeItem("loginDetail");
+             let data =  {"email":"demo@demo.com","password":"123456","is_login":false};
+             localStorage.setItem("loginDetail", JSON.stringify(data));
+            }
+      });
+      </script>
 </body>
 </html>
