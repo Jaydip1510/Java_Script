@@ -71,3 +71,7 @@ window.setTimeout(function () {
     });
 }, 4000);
 
+function logindetail(){
+      
+
+}
