@@ -100,10 +100,13 @@
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
+                   
                         <li class="nav-item dropdown">
+                            
                             <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="assets/images/jaydip.jpg" alt="user" class="profile-pic me-2">Jaydip makwana
+                                <button name="logout" id="logout" class="btn btn-primary">Logout</button>
                             </a>
                             <ul class="dropdown-menu show" aria-labelledby="navbarDropdown"></ul>
                         </li>
@@ -241,12 +244,12 @@
     <script src="js/custom.js"></script>
     <script>
         $(document).ready(function(){
+            let inform;
+
+            if(inform )
             getSatusCount();
         });
-        $(document).ready(function(){
-            
-            logindetail();
-        });
+        
     </script>
 </body>
 
