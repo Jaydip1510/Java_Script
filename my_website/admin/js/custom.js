@@ -70,3 +70,4 @@ window.setTimeout(function () {
         $(this).remove();
     });
 }, 4000);
+
