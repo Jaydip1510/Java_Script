@@ -63,7 +63,7 @@ function getSatusCount() {
    
     document.getElementById("tot_prod_cnt").innerHTML = tot_prod_cnt;
     document.getElementById("tot_cat_cnt").innerHTML = tot_cat_cnt;
-
+    
 }
 window.setTimeout(function () {
     $(".alert").fadeTo(500, 0).slideUp(500, function () {
@@ -71,7 +71,6 @@ window.setTimeout(function () {
     });
 }, 4000);
 
-function logindetail(){
-      
-
+function add(){
+    window.location.href="login.html";  
 }
