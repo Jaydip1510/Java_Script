@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>loginform</title>
+</head>
+<body>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+       Login User
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Login Detail</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form name="login" action="index.html" id="login">
+                    <label for="">Email Id:-</label>
+                    <input type="email" class="form-control" name="email" id="email">
+                    <br><br>
+            
+                    <label for="">Password:-</label>
+                    <input type="password"  class="form-control" name="pwd" id="pwd">
+                    <br><br>
+            
+                    <label for="">Confirm Password:-</label>
+                    <input type="password" class="form-control" name="cpwd" id="cpwd">
+                    <br><br>
+            
+                    <input type="button" class="btn btn-primary" value="Login" id="btn" name="btn">
+                </form>
+             
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+    <script src="login.js"></script>
+</body>
+</html>
