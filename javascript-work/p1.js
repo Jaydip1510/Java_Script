@@ -7,6 +7,7 @@ document.getElementById('btn1').addEventListener("click", () => {
 
     let jp = {};
     let xyz = {
+        id:1,
         name: name,
         age: age,
         salary: salary,
@@ -14,6 +15,14 @@ document.getElementById('btn1').addEventListener("click", () => {
     };
 
     let sData = JSON.parse(localStorage.getItem("empDetail"));
+    let len= sData.length;
+      xyz = {
+         id:len+1,
+         name: name,
+         age: age,
+         salary: salary,
+         gender: gen
+    };
     if (sData != null) {
         sData.push(xyz);
         localStorage.setItem("empDetail", JSON.stringify(sData));
@@ -29,6 +38,7 @@ function display() {
     let dt = '';
     if (abc != null) {
         dt += "<tr>";
+        dt += "<th><center>Id</center></th>";
         dt += "<th><center>Name</center></th>";
         dt += "<th><center>Age</center></th>";
         dt += "<th><center>Salary</center></th>";
@@ -39,15 +49,25 @@ function display() {
 
 
             dt += "<tr>";
+            dt += "<td><center>" + abc[i].id + "</center></td>";
             dt += "<td><center>" + abc[i].name + "</center></td>";
             dt += "<td><center>" + abc[i].age + "</center></td>";
             dt += "<td><center>" + abc[i].salary + "</center></td>";
             dt += "<td><center>" + abc[i].gender + "</center></td>";
-            dt += "<td><center><input type='button' name='btndel' id='btndel' value='Delete' onclick = 'delData(" + i + ")'</center></td>";
+            dt += "<td><center><input type='button' class='btn btn-primary' name='btndel' id='btndel' value='Delete' onclick = 'delData(" + i + ")'</center></td>";
             dt += "</tr>";
         }
     }
     document.getElementById("userData").innerHTML = dt;
+}
+
+function delData(id){
+    let rv = JSON.parse(localStorage.getItem("empDetail"));
+    if(rv != null){
+        rv.splice(id,1);
+        localStorage.setItem("empDetail",JSON.stringify(rv));
+        display();
+    }
 }
 
 
