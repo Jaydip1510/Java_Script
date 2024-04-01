@@ -130,7 +130,6 @@ function display() {
          dt += "<td><center>" + total.toFixed(2) + "</center></td>";
          dt += " <td><center><i class='fas fa-edit text-success name='btnedit'  onclick='editData(" + i + ")''></i>";
          dt += "<i class='fas fa-trash-alt text-danger name='btndel' onclick='delData(" + i + ")''></i></center></td>";
-        
          dt += "</tr>";
       }
    }
