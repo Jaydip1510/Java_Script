@@ -4,7 +4,7 @@ function number(n) {
         console.log(n); 
         n++;
         number(n);
-    }
+     }
       
 } 
 var jp = 1;
